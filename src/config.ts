@@ -52,24 +52,14 @@ export const SiteMetadata = {
       icon: 'envelope',
     },
     {
-      name: 'Phone',
-      link: '555-5555',
-      icon: 'telephone',
-    },
-    {
       name: 'LinkedIn',
       link: 'https://www.linkedin.com/rndao',
       icon: 'linkedin',
     },
     {
-      name: 'Facebook',
-      link: 'https://www.facebook.com/rndao',
-      icon: 'facebook',
-    },
-    {
-      name: 'Instagram',
-      link: 'https://www.instagram.com/rndao',
-      icon: 'instagram',
+      name: 'Discord',
+      link: 'https://discord.gg/invite/rndao',
+      icon: 'discord',
     },
     {
       name: 'Twitter',
@@ -95,8 +85,8 @@ export const NavigationLinks = [
   { name: 'Home', href: '' },
   { name: 'About', href: 'about' },
   { name: 'Contact', href: 'contact' },
-  { name: 'Blog', href: 'blog' },
-  { name: 'Docs', href: 'doc/introduction' },
+  // { name: 'Blog', href: 'blog' },
+  { name: 'Docs', href: 'https://intelligent-glove-386.notion.site/RnDAO-workspace-00a0bb59e8f84ddfaac7fdec869086e1' },
 ]
 
 export const CategoryDetail = [

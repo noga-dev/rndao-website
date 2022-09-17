@@ -4,13 +4,49 @@
 
 @layer base {
   body {
-    @apply bg-zinc-200 dark:bg-zinc-900;
-    @apply font-sans text-zinc-800 dark:text-zinc-400;
+    @apply bg-zinc-50 dark:bg-zinc-900 h-full min-h-screen;
+    @apply font-sans text-zinc-800 dark:text-zinc-400 text-base;
 
-    a {
-      @apply text-zinc-600 dark:text-zinc-900 hover:text-accent2;
+    h1, h2, h3, h4, h5, h6 {
+      @apply font-heading font-bold;
     }
 
+    h2 {
+      @apply text-2xl sm:text-3xl md:text-4xl text-center lg:text-left;
+    }
+
+    h3 {
+      @apply text-base;
+    }
+
+    a {
+      @apply text-zinc-600 dark:text-zinc-300 hover:text-accent1 dark:hover:text-accent2;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-zinc-800;
+
+    border-radius: 2px;
+    box-shadow: inset 0 0 5px rgb(0 0 0 / 70%);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-300 dark:bg-zinc-400 transition-colors duration-300 ease-in-out ;
+
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 70%);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-zinc-500 dark:bg-zinc-200
   }
 }
 
@@ -18,7 +54,7 @@
   .header {
     a {
       /* @apply */
-      @apply text-zinc-600 dark:text-zinc-100 hover:text-accent2;
+      @apply text-zinc-900 dark:text-zinc-100 hover:text-zinc-500 dark:hover:text-zinc-400 transition-colors duration-200 ease-in;
     }
   }
 }
