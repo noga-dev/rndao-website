@@ -1,0 +1,31 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  body {
+    @apply bg-zinc-200 dark:bg-zinc-900;
+    @apply font-sans text-zinc-800 dark:text-zinc-400;
+
+    a {
+      @apply text-zinc-600 dark:text-zinc-900 hover:text-accent2;
+    }
+
+  }
+}
+
+@layer components {
+  .header {
+    a {
+      /* @apply */
+      @apply text-zinc-600 dark:text-zinc-100 hover:text-accent2;
+    }
+  }
+}
+
+@layer utilities {
+  .text-gradient-basic {
+    @apply text-transparent bg-clip-text;
+    @apply bg-gradient-to-br from-accent1 to-accent2;
+  }
+}

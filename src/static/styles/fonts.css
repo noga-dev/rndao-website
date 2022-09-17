@@ -1,0 +1,22 @@
+/* @font-face kit by Fonts2u (https://fonts2u.com) */
+
+/*
+* When in local dev, use the path `./assets/fonts/<font-file>`
+* instead of `./fonts/<font-file>`.
+* This is because Vite is adding `assets`
+* to the path when it builds the site and it breaks the fonts.
+*/
+
+@font-face {
+  font-family: 'DIN Alternate Bold';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/DINAlternate-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
