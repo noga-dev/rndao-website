@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: 'class',
@@ -7,6 +10,8 @@ module.exports = {
       colors: {
         accent1: '#60E2FF',
         accent2: '#CEFF7D',
+        glassBlack: 'rgba(0 0 0 / 50%)',
+        glassWhite: 'rgba(255 255 255 / 50%)',
       },
       fontFamily: {
         'sans': ['Inter', 'Ubuntu', 'Roboto', 'sans-serif'],
@@ -15,6 +20,10 @@ module.exports = {
         'body': ['Inter', 'Ubuntu', 'Roboto', 'sans-serif'],
         'serif': ['serif']
       },
+    },
+    screens: {
+      'xs': '500px',
+      ...defaultTheme.screens,
     },
   },
   plugins: [

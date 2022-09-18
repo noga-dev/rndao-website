@@ -86,7 +86,7 @@ export const NavigationLinks = [
   { name: 'About', href: 'about' },
   { name: 'Contact', href: 'contact' },
   // { name: 'Blog', href: 'blog' },
-  { name: 'Docs', href: 'https://intelligent-glove-386.notion.site/RnDAO-workspace-00a0bb59e8f84ddfaac7fdec869086e1' },
+  // { name: 'Docs', href: 'doc' },
 ]
 
 export const CategoryDetail = [
@@ -146,7 +146,7 @@ export const PAGE_SIZE = 6
 
 export const GITHUB_EDIT_URL = `https://github.com/luxumbra/rndao-website`
 
-export const COMMUNITY_INVITE_URL = `https://astro.build/chat`
+export const COMMUNITY_INVITE_URL = `https://discord.gg/invite/rndao`
 
 export type Sidebar = Record<string, { text: string; link: string }[]>
 

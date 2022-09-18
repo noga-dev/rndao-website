@@ -4,10 +4,10 @@ import { SiteMetadata, Logo } from '../config'
 import SVGImg from '../components/svgimg.astro'
 ---
 
-<div class="h-24 lg:h-16"></div>
-<footer class="group fixed bottom-0 inset-x-0 w-full text-gray-600 dark:text-gray-400 h-20">
+<div class="hidden lg:block h-24 lg:h-16"></div>
+<footer class="group relative lg:fixed bottom-0 inset-x-0 w-full text-gray-600 dark:text-gray-400 h-20 z-50">
   <div
-    class="absolute z-20 bottom-0 inset-x-0 bg-gray-100 dark:bg-zinc-900 px-4 lg:px-8 py-1 lg:py-4 w-full flex items-center lg:flex-row flex-col border-t-2 border-zinc-300 dark:border-zinc-600 origin-bottom translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-transform duration-300 ease-out"
+    class="lg:absolute z-20 bottom-0 inset-x-0 bg-gray-100 dark:bg-black lg:dark:bg-glassBlack lg:backdrop-blur-xl px-4 lg:px-8 py-1 lg:py-4 w-full flex items-center lg:flex-row flex-col border-t-2 border-zinc-300 dark:border-zinc-600 origin-bottom lg:translate-y-full lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-transform duration-300 ease-in-out"
    >
     <span class="flex-none flex flex-row items-center">
       <a class="flex title-font font-medium items-center lg:justify-start justify-center text-gray-900 dark:text:gray-100" href={import.meta.env.BASE_URL} >
