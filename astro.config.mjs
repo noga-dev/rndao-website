@@ -20,7 +20,7 @@ export default defineConfig({
     },
   },
   server: { port: 1144 },
-  site: 'https://rndao.github.io',
+  site: 'https://rndao.luxumbra.dev',
   base: '/',
   output: 'static',
   integrations: [tailwind(), sitemap(), image(), mdx(), alpinejs(), robotsTxt()],
@@ -41,6 +41,12 @@ export default defineConfig({
       langs: [],
       // Enable word wrap to prevent horizontal scrolling
       wrap: true,
+    },
+  },
+  define: {
+    global: "globalThis",
+    process: {
+      env: "development",
     },
   },
 })

@@ -43,8 +43,8 @@ Concretely, at RnDAO, we:
 Additionally, we'll seek to 'drink our own champagne' by being users of the tools and research we produce. We aim to succeed by role-modelling decentralised practices and leveraging inter-DAO collaboration.
 
 ## The team (who):
-
-An incomplete list of those who contribute to RnDAO:
+Coming soon™️
+<!-- An incomplete list of those who contribute to RnDAO:
 
 [RnDAO Team](https://www.notion.so/RnDAO-Team-69bd970d69894b23b722405cc6c6b275)
 
@@ -276,7 +276,7 @@ Theo Beutel - VitaDAO & Colony - @theobtl
 
 Tyler Whittle - DAO Masters’ Master
 
-Teo - ex-sales at Gartner, contributor at Aragon
+Teo - ex-sales at Gartner, contributor at Aragon -->
 
 ## Business Model and Financial Viability:
 

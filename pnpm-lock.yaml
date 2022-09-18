@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@akebifiky/remark-simple-plantuml': ^1.0.2
+  '@alpinejs/intersect': ^3.10.3
   '@astrojs/alpinejs': ^0.1.2
   '@astrojs/image': ^0.5.1
   '@astrojs/mdx': ^0.11.1
@@ -44,6 +45,7 @@ specifiers:
   unist-util-visit: ^4.1.1
 
 dependencies:
+  '@alpinejs/intersect': 3.10.3
   '@astrojs/rss': 1.0.1
   astro-icon: 0.7.3
   astro-seo: 0.6.0
@@ -96,6 +98,10 @@ packages:
       plantuml-encoder: 1.4.0
       unist-util-visit: 2.0.3
     dev: true
+
+  /@alpinejs/intersect/3.10.3:
+    resolution: {integrity: sha512-vMRvhbMJzS1tupb2a/3GF5H+gLxxWaXJpcxJlfSHrV2JTb+RFWOJIkL/63JpPPGibtpaNBDrx3hsRN0CJ4d5mw==}
+    dev: false
 
   /@altano/tiny-async-pool/1.0.2:
     resolution: {integrity: sha512-qQzaI0TBUPdpjZ3qo5b2ziQY9MSNpbziH2ZrE5lvtUZL+kn9GwVuVJwoOubaoNkeDB+rqEefnpu1k+oMpOCYiw==}

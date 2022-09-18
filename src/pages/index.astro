@@ -10,6 +10,8 @@ import LatestArticles from '../components/latestarticles.astro'
 import CTA from '../components/cta.astro'
 import Research from '../components/research.astro'
 import Clarity from '../components/clarity.astro'
+import Assumptions from '../components/assumptions.astro'
+import Workdone from '../components/workdone.astro'
 
 const frontmatter: Frontmatter = {
   title: SiteMetadata.title,
@@ -36,6 +38,8 @@ const latestPosts = posts
   <Features />
   <Research />
   <Clarity />
+  <Assumptions />
+  <Workdone />
   <!-- <FindOutMore /> -->
   <!-- <LatestArticles posts={latestPosts} /> -->
   <CTA />

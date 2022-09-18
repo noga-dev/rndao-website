@@ -14,9 +14,8 @@ var myloc, myzoom
 <script define:vars={{ loc, zoom }}>
   myloc = loc
   myzoom = zoom
-</script>
-<script>
-  import L from 'leaflet/dist/leaflet.js'
+
+  import L from 'leaflet'
   var map = L.map('map').setView(myloc, myzoom)
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
