@@ -1,32 +1,6 @@
 ---
 import { Icon } from 'astro-icon'
 
-const features = [
-  {
-    name: 'Easy to Create Content',
-    description:
-      'Create pages and blog posts using MDX (Markdown with Javascript components). Includes support for math equations (KaTeX) and diagrams (mermaid, plantuml and markmap)',
-    icon: 'sparkles',
-  },
-  {
-    name: 'Customisable Design',
-    description:
-      'Built using the TailwindCSS ecosystem (including HeroIcons and Hero Patterns). Very easy to customise and change design. Template illustrations by unDraw.',
-    icon: 'puzzle',
-  },
-  {
-    name: 'SEO Ready',
-    description:
-      'Full support for Facebook (Open Graph), Twitter Cards, Schema/JSON-LD metadata. Automatically generated robots.txt, RSS feed and sitemap.',
-    icon: 'presentation-chart-bar',
-  },
-  {
-    name: 'Blazing Performance',
-    description:
-      'Achieve great web vitals scores. Static site using Jamstack architecture. Built using Astro and Typescript for ultimate performance and type safety.',
-    icon: 'clock',
-  },
-]
 ---
 
 <div
@@ -38,7 +12,6 @@ const features = [
   >
   <div
     class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 py-10 lg:py-16"
-    x-cloak
     x-show="shown"
     x-transition:enter="transition ease-out duration-300 transform"
     x-transition:enter-start="opacity-0 translate-x-6"

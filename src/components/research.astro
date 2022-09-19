@@ -4,7 +4,7 @@ import SVGImg from '../components/svgimg.astro'
 import { FeaturedSVG } from '../config'
 ---
 
-<div class="relative bg-white dark:bg-zinc-900 overflow-hidden h-screen  border-t-[1px] border-zinc-900">
+<div class="relative bg-white dark:bg-zinc-900 overflow-hidden sm:h-screen  border-t-[1px] border-zinc-900">
   <div class="hidden lg:block lg:absolute  inset-y-0 -left-20 h-screen w-1/2 lg:-translate-x-8 z-[2]">
     <svg
     class="hidden lg:block absolute -right-1/4 inset-y-0 -top-0 h-screen w-48 text-white dark:text-zinc-900 transform z-[1]"
@@ -34,13 +34,12 @@ import { FeaturedSVG } from '../config'
       <main
         class="relative pt-16 mx-auto max-w-7xl px-4 sm:pt-12 sm:px-0 sm:pr-12 md:pt-16 lg:pt-20 lg:px-0 lg:pr-16 xl:pt-28 z-20 "
         x-data="{shown: false}"
-        x-intersect.half="shown = true"
+        x-intersect.full="shown = true"
         x-intersect:leave="shown = false"
       >
         <div class="text-left"
-        x-cloak
         x-show="shown"
-        x-transition:enter="transition ease-out duration-300 transform"
+        x-transition:enter="transform transition ease-out duration-300"
         x-transition:enter-start="opacity-50 -translate-x-6"
         x-transition:enter-end="opacity-100 -translate-x-0"
         x-transition:leave="transition ease-in duration-75 transform"
