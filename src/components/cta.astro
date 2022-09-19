@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon';
 import { SiteMetadata } from '../config'
 ---
 
@@ -6,16 +7,30 @@ import { SiteMetadata } from '../config'
   <div
     class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between"
   >
-  <div class="text-center lg:text-left">
+  <div class="text-center xs:text-left">
     <h2
-      class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl"
+      class="text-3xl xs:text-2xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl"
     >
       <span class="block dark:text-white">Want the latest news from RnDAO?</span>
     </h2>
-    <p class="text-gradient-basic text-3xl sm:text-4xl"
+    <p class="text-gradient-basic text-3xl xs:text-2xl sm:text-4xl"
     >
-      Sign up to the newsletter today
+      Sign up to the newsletter today.
     </p>
+    <div class="form-control mt-5 w-full sm:max-w-2xl">
+      <label class="label hidden" aria-hidden="false">
+        <span class="label-text">Your Email</span>
+      </label>
+      <label class="input-group input-group-md sm:input-group-lg">
+        <span class=" bg-zinc-800">Email</span>
+        <input type="text" placeholder="your@email.com" class="input input-bordered text-zinc-300 min-h-fit text-sm xs:text-lg bg-zinc-900 w-2/3" />
+        <button class="btn btn-subtle glass bg-zinc-700">
+          <span class="block xs:hidden bg-transparent">
+            <Icon pack="bi" name="send-fill" class="block h-8 w-8 bg-transparent" />
+          </span>
+          <span class="hidden xs:inline bg-transparent">Subscribe</span></button>
+      </label>
+    </div>
   </div>
     <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
       <!-- <div class="inline-flex rounded-md shadow">

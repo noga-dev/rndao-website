@@ -4,19 +4,33 @@ import { FeaturedSVG } from '../config'
 ---
 
 <div class="flex flex-row items-center justify-center relative bg-white dark:bg-zinc-900 overflow-hidden w-full h-screen">
+
+  <div class="hidden lg:block lg:absolute  inset-y-0 -left-20 h-screen w-1/2 lg:-translate-x-8 z-[2]">
+    <svg
+    class="hidden lg:block absolute -right-20 inset-y-0 h-full w-48 text-white dark:text-zinc-900 transform translate-x-1/2 z-[1] -scale-x-100"
+    fill="currentColor"
+    viewBox="0 0 100 100"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <polygon points="25,0 100,0 75,100 0,100"></polygon>
+    </svg>
+    <svg
+    class="hidden lg:block absolute -right-20 inset-y-0 h-full w-48 text-white dark:text-black transform translate-x-1/2 z-0 -scale-x-100 opacity-50 blur-xl"
+    fill="currentColor"
+    viewBox="0 0 100 100"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <polygon points="25,0 100,0 75,100 0,100"></polygon>
+    </svg>
+    <div class="absolute inset-y-0 w-[111%] h-full bg-white dark:bg-zinc-900 z-[2]" />
+  </div>
   <div class="w-full lg:max-w-7xl mx-auto h-full">
     <div
-      class="z-10 relative h-full pb-8 sm:pb-16 md:pb-20 lg:max-w-3xl w-full lg:pb-28 xl:pb-32 px-5 lg:px-0 bg-white dark:bg-zinc-900"
+      class="z-10 relative h-full pb-8 sm:pb-16 md:pb-20 lg:max-w-3xl w-full lg:pb-28 xl:pb-32 px-5 lg:px-0"
     >
-      <svg
-      class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white dark:text-zinc-900 transform translate-x-1/2 z-0 -scale-x-100"
-      fill="currentColor"
-      viewBox="0 0 100 100"
-      preserveAspectRatio="none"
-      aria-hidden="true"
-    >
-      <polygon points="50,0 100,0 50,100 0,100"></polygon>
-      </svg>
+
       <main
         class="relative flex flex-row items-center justify-between pt-10 mx-auto w-full h-full  max-w-7xl sm:pt-12 md:pt-16 lg:pt-20 xl:pt-28 z-20 "
       >
@@ -50,7 +64,7 @@ import { FeaturedSVG } from '../config'
       </div>
   </div>
   <div
-    class="absolute lg:inset-y-0 lg:-right-0 lg:w-1/2 bg-zinc-100 dark:bg-zinc-800"
+    class="hidden sm:block sm:absolute sm:inset-y-0 sm:-right-0 sm:w-1/2 bg-zinc-100 dark:bg-zinc-800 z-0"
   >
     <SVGImg
       class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full translate-x-10 object-center"
