@@ -38,8 +38,20 @@ const frontmatter = {
     >
       <main
         class="relative flex flex-col lg:flex-row justify-between pt-10 mx-auto w-full lg:h-screen  max-w-7xl sm:pt-12 md:pt-16 lg:pt-20 xl:pt-0 z-20"
+        x-data="{shown: false}"
+        x-intersect.half="shown = true"
+        x-intersect:leave="shown = false"
       >
-        <div class="text-left sm:self-center w-full lg:w-1/2 lg:max-w-lg">
+        <div
+        class="text-left sm:self-center w-full lg:w-1/2 lg:max-w-lg"
+        x-show="shown"
+        x-transition:enter="transition ease-out duration-300 transform"
+        x-transition:enter-start="opacity-50 translate-y-6"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-75 transform"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-50 translate-y-6"
+        >
           <h2
             class="text-2xl xs:text-4xl text-left tracking-tight font-heading font-black text-zinc-900 dark:text-zinc-50 sm:text-3xl md:text-3xl"
           >
@@ -83,7 +95,16 @@ const frontmatter = {
             </li>
           </ul>
         </div>
-        <div class="mt-5 sm:mt-0 lg:w-1/2 lg:max-w-lg self-center justify-self-end">
+        <div
+        class="mt-5 sm:mt-0 lg:w-1/2 lg:max-w-lg self-center justify-self-end"
+        x-show="shown"
+        x-transition:enter="transition ease-out duration-300 transform"
+        x-transition:enter-start="opacity-50 translate-y-6"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-75 transform"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-50 translate-y-6"
+        >
           <h2
             class="text-2xl xs:text-4xl text-left tracking-tight font-heading font-black text-zinc-900 dark:text-zinc-50 sm:text-3xl md:text-3xl"
           >

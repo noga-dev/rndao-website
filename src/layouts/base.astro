@@ -77,10 +77,26 @@ const { frontmatter } = Astro.props
             },
           }))
         })
-        Alpine.start()
+        // Alpine.start()
       }
     </script>
 
+    <script>
+      import Alpine from 'alpinejs'
+      import intersect from '@alpinejs/intersect'
+
+      if (typeof window !== 'undefined') {
+        Alpine.plugin(intersect)
+        // Alpine.start()
+      }
+    </script>
+
+    <script>
+      import Alpine from 'alpinejs'
+      if (typeof window !== 'undefined') {
+        Alpine.start()
+      }
+    </script>
     <style is:inline>
       [x-cloak] { display: none !important; }
       </style>

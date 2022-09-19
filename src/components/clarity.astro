@@ -3,15 +3,28 @@ import SVGImg from '../components/svgimg.astro'
 import { FeaturedSVG } from '../config'
 ---
 
-<div class="relative bg-white dark:bg-zinc-900 border-t-[1px] border-zinc-900 overflow-hidden w-full lg:h-screen">
+<div class="relative bg-white dark:bg-zinc-900 border-t-[1px] border-zinc-900 overflow-hidden w-full sm:h-screen">
   <div class="max-w-7xl mx-auto h-full">
     <div
       class="z-10 relative pb-8 sm:pb-16 md:pb-20 lg:w-7xl lg:pb-28 xl:pb-32 px-5 lg:px-0 bg-white dark:bg-zinc-900"
     >
       <main
         class="relative flex flex-col lg:flex-row justify-between pt-10 mx-auto w-full  sm:pt-12 md:pt-16 lg:pt-20 xl:pt-28 z-20 "
+        x-data="{shown: false}"
+        x-intersect.half="shown = true"
+        x-intersect:leave="shown = false"
       >
-        <div class="text-left self-start w-full lg:w-1/2 lg:max-w-lg">
+        <div
+          class="text-left self-start w-full lg:w-1/2 lg:max-w-lg"
+          x-cloak
+          x-show="shown"
+          x-transition:enter="transition ease-out duration-300 transform"
+          x-transition:enter-start="opacity-50 translate-y-6"
+          x-transition:enter-end="opacity-100 translate-y-0"
+          x-transition:leave="transition ease-in duration-75 transform"
+          x-transition:leave-start="opacity-100 translate-y-0"
+          x-transition:leave-end="opacity-50 translate-y-6"
+        >
           <h2
             class="text-4xl text-left tracking-tight font-heading font-black text-zinc-900 dark:text-zinc-50 sm:text-5xl md:text-4xl"
           >
@@ -29,7 +42,17 @@ import { FeaturedSVG } from '../config'
             <p>Our client-facing team has led research in both Web3 (Aragon, Sobol, etc) and Web2 (Intuit, Google, McKinsey, etc).  We've facilitated workshops for nimble startups, leading tech corporates, and even the UN. We believe in deep alignment and leaving no stone unturned, ensuring the decisions that come out are top quality.</p>
            </div>
         </div>
-        <div class="lg:w-1/2 lg:max-w-lg">
+        <div
+          class="lg:w-1/2 lg:max-w-lg"
+          x-cloak
+          x-show="shown"
+          x-transition:enter="transition ease-out duration-300 delay-500 transform"
+          x-transition:enter-start="opacity-0 translate-x-6"
+          x-transition:enter-end="opacity-100 translate-x-0"
+          x-transition:leave="transition ease-in duration-75 transform"
+          x-transition:leave-start="opacity-100 translate-x-0"
+          x-transition:leave-end="opacity-0 translate-x-6"
+        >
           <ul class="grid mt-3 justify-end items-center w-full gap-5 list-none">
             <li class="inline-flex flex-col space-y-2">
               <h3 class="text-gradient-basic">Research Strategy Workshop</h3>

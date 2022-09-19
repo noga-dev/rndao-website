@@ -31,8 +31,21 @@ import { FeaturedSVG } from '../config'
     >
       <main
         class="relative flex items-center mx-auto max-w-7xl px-4 sm:px-0 sm:pr-12  z-20 h-full"
+        x-data="{shown: false}"
+        x-intersect.full="shown = true"
+        x-intersect:leave="shown = false"
       >
-        <div class="text-center sm:text-left">
+        <div
+          class="text-center sm:text-left"
+          x-cloak
+          x-show="shown"
+          x-transition:enter="transition ease-out duration-300 transform"
+          x-transition:enter-start="opacity-50 -translate-x-6"
+          x-transition:enter-end="opacity-100 -translate-x-0"
+          x-transition:leave="transition ease-in duration-75 transform"
+          x-transition:leave-start="opacity-100 -translate-x-0"
+          x-transition:leave-end="opacity-50 -translate-x-6"
+        >
           <h1
             class="text-4xl tracking-tight font-heading font-bold text-zinc-900 dark:text-zinc-50 xs:text-7xl lg:text-6xl text-left"
           >
@@ -83,3 +96,13 @@ import { FeaturedSVG } from '../config'
     />
   </div>
 </div>
+
+<!-- <script>
+  import Alpine from 'alpinejs'
+  import intersect from '@alpinejs/intersect'
+
+  if (typeof window !== 'undefined') {
+    Alpine.plugin(intersect)
+    Alpine.start()
+  }
+</script> -->

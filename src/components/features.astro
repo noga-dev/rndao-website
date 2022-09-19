@@ -29,9 +29,27 @@ const features = [
 ]
 ---
 
-<div id="partner" class="py-12 bg-gray-100 dark:bg-zinc-800 border-t-[1px] border-zinc-900">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 py-10 lg:py-16">
-    <div class="">
+<div
+  id="partner"
+  class="py-12 bg-gray-100 dark:bg-zinc-800 border-t-[1px] border-zinc-900  w-full min-h-[75vh]"
+  x-data="{shown: false}"
+  x-intersect.full="shown = true"
+  x-intersect:leave="shown = false"
+  >
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 py-10 lg:py-16"
+    x-cloak
+    x-show="shown"
+    x-transition:enter="transition ease-out duration-300 transform"
+    x-transition:enter-start="opacity-0 translate-x-6"
+    x-transition:enter-end="opacity-100 translate-x-0"
+    x-transition:leave="transition ease-in duration-75 transform"
+    x-transition:leave-start="opacity-100 translate-x-0"
+    x-transition:leave-end="opacity-0 translate-x-6"
+  >
+    <div
+
+    >
       <h2
         class="text-base text-left text-zinc-800 dark:text-zinc-300 font-semibold tracking-wide uppercase"
       >

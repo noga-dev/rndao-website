@@ -33,8 +33,20 @@ import { FeaturedSVG } from '../config'
     >
       <main
         class="relative pt-16 mx-auto max-w-7xl px-4 sm:pt-12 sm:px-0 sm:pr-12 md:pt-16 lg:pt-20 lg:px-0 lg:pr-16 xl:pt-28 z-20 "
+        x-data="{shown: false}"
+        x-intersect.half="shown = true"
+        x-intersect:leave="shown = false"
       >
-        <div class="text-left">
+        <div class="text-left"
+        x-cloak
+        x-show="shown"
+        x-transition:enter="transition ease-out duration-300 transform"
+        x-transition:enter-start="opacity-50 -translate-x-6"
+        x-transition:enter-end="opacity-100 -translate-x-0"
+        x-transition:leave="transition ease-in duration-75 transform"
+        x-transition:leave-start="opacity-100 -translate-x-0"
+        x-transition:leave-end="opacity-50 -translate-x-6"
+        >
           <h2
             class="text-4xl tracking-tight font-heading font-black text-zinc-900 dark:text-zinc-50 text-left  sm:text-5xl md:text-4xl"
           >

@@ -33,8 +33,21 @@ import { FeaturedSVG } from '../config'
 
       <main
         class="relative flex flex-row items-center justify-between pt-10 mx-auto w-full h-full  max-w-7xl sm:pt-12 md:pt-16 lg:pt-20 xl:pt-28 z-20 "
+        x-data="{shown: false}"
+        x-intersect.full="shown = true"
+        x-intersect:leave="shown = false"
       >
-        <div class="text-left w-full lg:w-2/3 lg:max-w-2xl">
+        <div
+        class="text-left w-full lg:w-2/3 lg:max-w-2xl"
+        x-cloak
+        x-show="shown"
+        x-transition:enter="transition ease-out duration-300 transform "
+        x-transition:enter-start="opacity-0 -translate-x-6"
+        x-transition:enter-end="opacity-100 -translate-x-0"
+        x-transition:leave="transition ease-in duration-75 transform"
+        x-transition:leave-start="opacity-100 -translate-x-0"
+        x-transition:leave-end="opacity-0 -translate-x-6"
+        >
           <h2
             class="text-2xl text-left tracking-tight font-heading font-black text-zinc-900 dark:text-zinc-50 xs:text-5xl md:text-4xl"
           >
