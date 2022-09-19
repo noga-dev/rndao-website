@@ -48,6 +48,10 @@
     }
   }
 
+  [x-cloak] {
+    display: none !important;
+  }
+
   ::-webkit-scrollbar {
     width: 12px;
   }
