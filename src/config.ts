@@ -82,11 +82,11 @@ export const DefaultSVG = '../svg/undraw/undraw_my_feed.svg'
 export const DefaultImage = '../images/undraw/undraw_my_feed.png'
 
 export const NavigationLinks = [
-  { name: 'Home', href: '' },
-  { name: 'About', href: 'about' },
-  { name: 'Contact', href: 'contact' },
-  // { name: 'Blog', href: 'blog' },
-  // { name: 'Docs', href: 'doc' },
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Contact', href: '/contact' },
+  // { name: 'Blog', href: '/blog' },
+  // { name: 'Docs', href: '/doc' },
 ]
 
 export const CategoryDetail = [

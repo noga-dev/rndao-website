@@ -21,7 +21,7 @@ export default defineConfig({
   },
   server: { port: 1144 },
   site: 'https://rndao.luxumbra.dev',
-  base: '/',
+  base: '',
   output: 'static',
   integrations: [tailwind(), sitemap(), image(), mdx(), alpinejs(), robotsTxt()],
   experimental: {
