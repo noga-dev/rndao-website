@@ -3,11 +3,11 @@ import SVGImg from '../components/svgimg.astro'
 import { FeaturedSVG } from '../config'
 ---
 
-<div class="flex flex-row items-center justify-center relative bg-white dark:bg-zinc-900 overflow-hidden w-full h-screen">
+<div class="flex flex-row items-center justify-center relative border-t-[1px] border-zinc-900 bg-white dark:bg-zinc-900 overflow-hidden w-full h-screen">
 
   <div class="hidden lg:block lg:absolute  inset-y-0 -left-20 h-screen w-1/2 lg:-translate-x-8 z-[2]">
     <svg
-    class="hidden lg:block absolute -right-20 inset-y-0 h-full w-48 text-white dark:text-zinc-900 transform translate-x-1/2 z-[1] -scale-x-100"
+    class="hidden lg:block absolute -right-20 -top-0 inset-y-0 h-screen w-48 text-white dark:text-zinc-900 transform translate-x-1/2 z-[1] -scale-x-100"
     fill="currentColor"
     viewBox="0 0 100 100"
     preserveAspectRatio="none"
@@ -16,7 +16,7 @@ import { FeaturedSVG } from '../config'
     <polygon points="25,0 100,0 75,100 0,100"></polygon>
     </svg>
     <svg
-    class="hidden lg:block absolute -right-20 inset-y-0 h-full w-48 text-white dark:text-black transform translate-x-1/2 z-0 -scale-x-100 opacity-50 blur-xl"
+    class="hidden lg:block absolute -right-20 -top-0 inset-y-0 h-screen w-48 text-black dark:text-black transform translate-x-1/2 z-0 -scale-x-100 opacity-50 blur-xl"
     fill="currentColor"
     viewBox="0 0 100 100"
     preserveAspectRatio="none"
@@ -64,7 +64,7 @@ import { FeaturedSVG } from '../config'
       </div>
   </div>
   <div
-    class="hidden sm:block sm:absolute sm:inset-y-0 sm:-right-0 sm:w-1/2 bg-zinc-100 dark:bg-zinc-800 z-0"
+    class="hidden sm:block sm:absolute sm:inset-y-0 sm:-right-0 sm:w-1/2 bg-zinc-400 dark:bg-zinc-800 z-0"
   >
     <SVGImg
       class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full translate-x-10 object-center"

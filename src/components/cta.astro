@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon';
 import { SiteMetadata } from '../config'
 ---
 
-<div class="bg-gray-50 dark:bg-black flex items-center">
+<div class="bg-white dark:bg-black flex items-center border-t-[1px] border-zinc-900">
   <div
     class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between"
   >
@@ -22,7 +22,7 @@ import { SiteMetadata } from '../config'
         <span class="label-text">Your Email</span>
       </label>
       <label class="input-group input-group-md sm:input-group-lg">
-        <span class=" bg-zinc-800">Email</span>
+        <span class="bg-zinc-800 text-zinc-300">Email</span>
         <input type="text" placeholder="your@email.com" class="input input-ghost input-bordered focus:outline-accent2 text-zinc-300 focus:text-zinc-200 min-h-fit text-sm xs:text-base bg-zinc-900 w-2/3" />
         <button class="btn btn-subtle glass bg-zinc-700 text-sm">
           <span class="block xs:hidden bg-transparent">

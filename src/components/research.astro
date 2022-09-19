@@ -4,10 +4,10 @@ import SVGImg from '../components/svgimg.astro'
 import { FeaturedSVG } from '../config'
 ---
 
-<div class="relative bg-white dark:bg-zinc-900 overflow-hidden  border-t-[1px]">
+<div class="relative bg-white dark:bg-zinc-900 overflow-hidden h-screen  border-t-[1px] border-zinc-900">
   <div class="hidden lg:block lg:absolute  inset-y-0 -left-20 h-screen w-1/2 lg:-translate-x-8 z-[2]">
     <svg
-    class="hidden lg:block absolute -right-1/4 inset-y-0 h-full w-48 text-white dark:text-zinc-900 transform z-[1]"
+    class="hidden lg:block absolute -right-1/4 inset-y-0 -top-0 h-screen w-48 text-white dark:text-zinc-900 transform z-[1]"
     fill="currentColor"
     viewBox="0 0 100 100"
     preserveAspectRatio="none"
@@ -16,7 +16,7 @@ import { FeaturedSVG } from '../config'
     <polygon points="25,0 100,0 75,100 0,100"></polygon>
     </svg>
     <svg
-    class="hidden lg:block absolute -right-1/4 inset-y-0 h-full w-48 text-white dark:text-black transform z-0 opacity-50 blur-xl"
+    class="hidden lg:block absolute -right-1/4 inset-y-0 h-screen w-48 text-black dark:text-black transform z-0 opacity-50 blur-xl"
     fill="currentColor"
     viewBox="0 0 100 100"
     preserveAspectRatio="none"
@@ -24,12 +24,12 @@ import { FeaturedSVG } from '../config'
   >
     <polygon points="25,0 100,0 75,100 0,100"></polygon>
     </svg>
-    <div class="absolute inset-y-0 w-[115%] h-screen bg-white dark:bg-zinc-900 z-[2]" />
+    <div class="absolute inset-y-0 w-full sm:w-[115%] h-screen bg-white dark:bg-zinc-900 z-[2]" />
   </div>
 
-  <div class="max-w-7xl mx-auto">
+  <div class="max-w-7xl mx-auto h-full">
     <div
-      class="z-10 relative pb-16 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 bg-white dark:bg-zinc-900"
+      class="z-10 relative pb-16 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 "
     >
       <main
         class="relative pt-16 mx-auto max-w-7xl px-4 sm:pt-12 sm:px-0 sm:pr-12 md:pt-16 lg:pt-20 lg:px-0 lg:pr-16 xl:pt-28 z-20 "
@@ -58,7 +58,7 @@ import { FeaturedSVG } from '../config'
     </div>
   </div>
   <div
-    class="hidden lg:block lg:absolute lg:inset-y-0 lg:-right-0 lg:w-1/2 bg-zinc-100 dark:bg-zinc-800"
+    class="hidden lg:block lg:absolute lg:inset-y-0 lg:-right-0 lg:w-1/2 bg-zinc-500 dark:bg-zinc-800"
   >
     <SVGImg
       class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full translate-x-10 object-center"
