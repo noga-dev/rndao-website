@@ -32,7 +32,7 @@ export const SiteMetadata = {
     twitter: '@bdgrdev',
     url: 'https://rndao.org',
     email: '',
-    summary: 'Dolor do proident anim minim non occaecat veniam irure eiusmod fugiat pariatur occaecat minim culpa.',
+    summary: 'Get a razor sharp understanding of the market and your users.',
   },
   org: {
     name: 'RnDAO',
