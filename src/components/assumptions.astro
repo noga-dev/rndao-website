@@ -34,7 +34,7 @@ import { FeaturedSVG } from '../config'
       <main
         class="relative flex flex-row items-center justify-between pt-10 mx-auto w-full h-full  max-w-7xl sm:pt-12 md:pt-16 lg:pt-20 xl:pt-28 z-20 "
         x-data="{shown: false}"
-        x-intersect.full="shown = true"
+        x-intersect.half="shown = true"
         x-intersect:leave="shown = false"
       >
         <div
