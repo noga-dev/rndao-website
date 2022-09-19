@@ -25,8 +25,8 @@ export interface TagType {
 }
 
 export const SiteMetadata = {
-  title: 'RnDAO',
-  description: 'Dolor do proident anim minim non occaecat veniam irure eiusmod fugiat pariatur occaecat minim culpa.',
+  title: 'RnDAO: Research and Development DAO',
+  description: 'Get a razor sharp understanding of the market and your users.',
   author: {
     name: 'luxumbra',
     twitter: '@bdgrdev',
@@ -40,7 +40,7 @@ export const SiteMetadata = {
     url: 'https://rndao.org',
     email: '',
     summary:
-      'Dolor do proident anim minim non occaecat veniam irure eiusmod fugiat pariatur occaecat minim culpa.',
+      'Get a razor sharp understanding of the market and your users.',
   },
   location: 'Rivendell, Middle Earth',
   latlng: [-33.86785, 151.20732] as [number, number],
