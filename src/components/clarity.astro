@@ -11,7 +11,7 @@ import { FeaturedSVG } from '../config'
       <main
         class="relative flex flex-col lg:flex-row justify-between pt-10 mx-auto w-full  sm:pt-12 md:pt-16 lg:pt-20 xl:pt-28 z-20 "
         x-data="{shown: false}"
-        x-intersect.half="shown = true"
+        x-intersect.threshold.75="shown = true"
         x-intersect:leave="shown = false"
       >
         <div
@@ -43,7 +43,6 @@ import { FeaturedSVG } from '../config'
         </div>
         <div
           class="lg:w-1/2 lg:max-w-lg"
-          x-cloak
           x-show="shown"
           x-transition:enter="transition ease-out duration-300 delay-500 transform"
           x-transition:enter-start="opacity-0 translate-x-6"

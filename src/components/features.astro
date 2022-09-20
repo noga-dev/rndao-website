@@ -2,27 +2,34 @@
 import { Icon } from 'astro-icon'
 
 ---
+<script>
+  import Alpine from 'alpinejs'
+  import intersect from '@alpinejs/intersect'
 
+  if (typeof window !== 'undefined') {
+    Alpine.plugin(intersect)
+    // Alpine.start()
+  }
+</script>
 <div
   id="partner"
   class="py-12 bg-gray-100 dark:bg-zinc-800 border-t-[1px] border-zinc-900  w-full min-h-[75vh]"
   x-data="{shown: false}"
-  x-intersect.full="shown = true"
+  x-intersect.half="shown = true"
   x-intersect:leave="shown = false"
   >
   <div
     class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 py-10 lg:py-16"
+    x-cloak
     x-show="shown"
     x-transition:enter="transition ease-out duration-300 transform"
-    x-transition:enter-start="opacity-0 translate-x-6"
-    x-transition:enter-end="opacity-100 translate-x-0"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
     x-transition:leave="transition ease-in duration-75 transform"
-    x-transition:leave-start="opacity-100 translate-x-0"
-    x-transition:leave-end="opacity-0 translate-x-6"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
   >
-    <div
-
-    >
+    <div>
       <h2
         class="text-base text-left text-zinc-800 dark:text-zinc-300 font-semibold tracking-wide uppercase"
       >
@@ -84,34 +91,5 @@ import { Icon } from 'astro-icon'
         <span>You want a sounding board you can trust to think through all the details</span></li>
       </ul>
     </div>
-
-    <!-- <div class="mt-10">
-      <dl
-        class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10"
-      >
-        {
-          features.map(feature => (
-            <div class="relative">
-              <dt>
-                <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 dark:bg-purple-400 text-white dark:text-black">
-                  <Icon
-                    class="h-6 w-6"
-                    aria-hidden="true"
-                    pack="heroicons-outline"
-                    name={feature.icon}
-                  />
-                </div>
-                <p class="ml-16 text-lg leading-6 font-medium text-gray-900 dark:text-gray-200">
-                  {feature.name}
-                </p>
-              </dt>
-              <dd class="mt-2 ml-16 text-base text-gray-600 dark:text-gray-400">
-                {feature.description}
-              </dd>
-            </div>
-          ))
-        }
-      </dl>
-    </div> -->
   </div>
 </div>

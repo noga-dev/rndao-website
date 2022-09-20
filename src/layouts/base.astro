@@ -17,7 +17,7 @@ const { frontmatter } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class=" motion-safe:scroll-smooth motion-reduce:auto ">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -53,7 +53,6 @@ const { frontmatter } = Astro.props
       if (typeof window !== 'undefined') {
 
         document.addEventListener("alpine:init", () => {
-          console.log("Alpine is ready to go!");
           Alpine.store("mobileMenu", () => ({
             isOpen: false,
             lastScrollTopPosition: 0,
@@ -73,7 +72,6 @@ const { frontmatter } = Astro.props
                 document.body.style.overflowY = 'visible'
                 window.scrollTo(0, this.lastScrollTopPosition)
               }
-              console.log('state', this.isOpen);
             },
           }))
         })
@@ -117,7 +115,7 @@ const { frontmatter } = Astro.props
     </head>
     <body
       x-ref="body"
-      x-data="$store.mobileMenu.isOpen"
+      x-data
     >
       {frontmatter.extra?.includes('mermaid') &&
         <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>

@@ -2,7 +2,15 @@
 import SVGImg from '../components/svgimg.astro'
 import { FeaturedSVG } from '../config'
 ---
+<script>
+  import Alpine from 'alpinejs'
+  import intersect from '@alpinejs/intersect'
 
+  if (typeof window !== 'undefined') {
+    Alpine.plugin(intersect)
+    // Alpine.start()
+  }
+</script>
 <div class="hero-wrapper relative h-screen lg:max-h-[80vh] -mt-16 pt-16 xs:pt-0  bg-white dark:bg-zinc-900 overflow-hidden">
   <div class="hidden lg:block lg:absolute  inset-y-0 -left-20 h-screen w-1/2 lg:-translate-x-8 z-[2]">
     <svg
@@ -47,7 +55,7 @@ import { FeaturedSVG } from '../config'
           x-transition:leave-end="opacity-50 -translate-x-6"
         >
           <h1
-            class="text-4xl tracking-tight font-heading font-bold text-zinc-900 dark:text-zinc-50 xs:text-7xl lg:text-6xl text-left"
+            class="text-4xl tracking-tight font-heading font-bold text-zinc-900 dark:text-zinc-50 xs:text-7xl sm:text-6xl text-left"
           >
             <span class="block xl:inline">Get a razor sharp understanding of the market{' '}
             and your users.
