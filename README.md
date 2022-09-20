@@ -16,11 +16,23 @@ PRs need an approval from at least one other person before they can be merged, c
 
 PR previews get assigned a URL when they're created.
 
+**Getting started**
+We use `pnpm` as a package manager
+
+`pnpm dev` runs the dev server
+
+`pnpm build` builds the site as a static site and puts the output to `./dist`
+
+`pnpm preview` will fire up a preview of the output dir on port 1145 for testing the build locally
+
+Other commands can be seen in `package.json`
+
 **Steps to contribute:**
 1. Create a new branch off of `develop` for your feature/bugfix branch. Please name your branch something descriptive, like `feature/cool-new-feature` or `bugfix/fix-that-bug`.
 2. Make your changes, and commit them to your branch.
 3. Push to `origin` and create a PR from your branch to `develop`.
 4. All PRs get a preview build on Fleek to make it easier for others to test, etc. You can find the preview link in the status section of the PR.
+
 
 ## 🎉 Site Features
 A lot of the features, while not all in use right now, seemed pretty apt for the kind of data the site might have to deal with. What isn't needed can be removed, but I think it's a good starting point.
