@@ -1,13 +1,34 @@
 # 📊 RnDAO Website
+A starting point for the RNDAO website.
 
-## 🎉 Features
+## :construction_worker: Contributing
+The site was stood up in 3 days, so the code is a little messy. I've done a good chunk of responsive work. Mobile is pretty good but there's still some bits to do on tablet & laptop screens.
+
+If you'd like to contribute, (while the repo is private) please contact @luxumbra for access. When / if it goes public, you can fork the repo and submit a PR.
+
+Currently there's two main branches: `main` and `develop`.  `main` is the production branch, and `develop` is the development branch. `main` is protected and requires a PR to merge into.
+PRs need an approval from at least one other person before they can be merged, currently only lux has those permissions.
+
+`main` is deployed to https://rndao.luxumbra.dev/
+
+`develop` is deployed to https://staging.rndao.luxumbra.dev/
+
+PR previews get assigned a URL when they're created.
+
+**Steps to contribute:**
+1. Create a new branch off of `develop` for your feature/bugfix branch. Please name your branch something descriptive, like `feature/cool-new-feature` or `bugfix/fix-that-bug`.
+2. Make your changes, and commit them to your branch.
+3. Push to `origin` and create a PR from your branch to `develop`.
+4. All PRs get a preview build on Fleek to make it easier for others to test, etc. You can find the preview link in the status section of the PR.
+
+## 🎉 Site Features
+A lot of the features, while not all in use right now, seemed pretty apt for the kind of data the site might have to deal with. What isn't needed can be removed, but I think it's a good starting point.
 
 - Full-featured blog with frontmatter (title, description, author, date, image, tags)
 - High performance low overhead with minimal Javascript (AlpineJS)
 - Full text client based search of blog pages via lunrjs (search index only loaded on first invocation of search on a page)
 - Index page and individual pages for authors, categories and tags, including pagination
 - Support for RSS feed, sitemap and robots.txt
-- SVG design (unDraw, Hero Patterns, Iconify)
 - Full SEO support including Open Graph, Twitter Cards and Schema.org via JSON-LD
 - Full support for Light and dark UI modes, as well as following system preferences, in accordance to TailwindCSS recommendation
 - Customised 404 error page
@@ -19,6 +40,7 @@
 - Photo gallery and lightbox using PhotoSwipe (including display of EXIF tags)
 - Carousel component using Swiper
 - Documentation pages (modelled after astro docs starter but using Tailwind)
+
 
 ## :toolbox: External Packages
 
