@@ -6,7 +6,8 @@ The site was stood up in 3 days, so the code is a little messy. I've done a good
 
 If you'd like to contribute, (while the repo is private) please contact @luxumbra for access. When / if it goes public, you can fork the repo and submit a PR.
 
-Currently there's two main branches: `main` and `develop`.  `main` is the production branch, and `develop` is the development branch. `main` is protected and requires a PR to merge into.
+Currently there's two main branches: `main` and `develop`.  `main` is the production branch, and `develop` is the development branch. Both are protected and require PRs before merging.
+
 PRs need an approval from at least one other person before they can be merged, currently only lux has those permissions.
 
 `main` is deployed to https://rndao.luxumbra.dev/
