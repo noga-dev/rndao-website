@@ -5,9 +5,10 @@ description: Docs intro
 layout: ../../layouts/doc.astro
 ---
 
-**Welcome to Astro!**
+### Welcome to RnDAO docs!
+This is a placeholder.
 
-This is the `docs` starter template. It contains all of the features that you need to build a Markdown-powered documentation site, including:
+<!-- This is the `docs` starter template. It contains all of the features that you need to build a Markdown-powered documentation site, including:
 
 - ✅ **Full Markdown support**
 - ✅ **Responsive mobile-friendly design**
@@ -24,4 +25,4 @@ To get started with this theme, check out the `README.md` in your new project di
 
 Found a missing feature that you can't live without? Please suggest it on Discord [(#ideas-and-suggestions channel)](https://astro.build/chat) and even consider adding it yourself on GitHub! Astro is an open source project and contributions from developers like you are how we grow!
 
-Good luck out there, Astronaut. 🧑‍🚀
+Good luck out there, Astronaut. 🧑‍🚀 -->

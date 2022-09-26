@@ -28,16 +28,16 @@ export const SiteMetadata = {
   title: 'RnDAO: Research and Development DAO',
   description: 'Get a razor sharp understanding of the market and your users.',
   author: {
-    name: 'luxumbra',
-    twitter: '@bdgrdev',
+    name: 'RnDAO',
+    twitter: '@rndao__',
     url: 'https://rndao.org',
     email: '',
     summary: 'Get a razor sharp understanding of the market and your users.',
   },
   org: {
     name: 'RnDAO',
-    twitter: '@rndao_',
-    url: 'https://rndao.org',
+    twitter: '@rndao__',
+    url: 'https://rndao.info',
     email: '',
     summary:
       'Get a razor sharp understanding of the market and your users.',

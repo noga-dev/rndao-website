@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/page.astro
 title: About RnDAO
-description:
+description: RnDAO is an innovation DAO, with a mission to empower humane collaboration. We’re funded by DAOs to serve DAOs and enable a humane vision of Web3.
 publishDate: '2022-08-08T00:00:00.000Z'
 coverSVG: ../svg/headers/page-header.svg
 socialImage: ../images/social.png
