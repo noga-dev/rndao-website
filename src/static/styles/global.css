@@ -3,6 +3,11 @@
 @import 'tailwindcss/utilities';
 
 @layer base {
+  :root {
+    --header-height: 4rem;
+    --footer-height: 4rem;
+  }
+
   body {
     @apply bg-zinc-50 dark:bg-black h-full min-h-screen overflow-x-hidden;
     @apply font-sans text-zinc-800 dark:text-zinc-300 text-base;
@@ -117,9 +122,6 @@
           @apply inline rounded-sm ml-1 text-xs -translate-y-1 -translate-x-1;
 
           content: '🖂';
-          /* border: 0.5px solid; */
-          /* width: 1em;
-          height: 1em; */
         }
       }
     }
@@ -131,5 +133,37 @@
     p:first-of-type {
       @apply text-base md:text-xl text-center lg:text-left text-zinc-400 font-bold font-heading mt-5 lg:mt-0;
     }
+
+
+    ul {
+      @apply list-none pl-0;
+
+      h3 + p {
+        @apply text-base lg:text-lg text-zinc-500 dark:text-zinc-400 italic;
+      }
+
+      p:first-of-type {
+        @apply text-base font-normal text-inherit;
+      }
+
+      ul {
+        @apply list-disc pl-6;
+      }
+    }
+  }
+
+  .h-header {
+    height: var(--header-height);
+  }
+
+  .h-footer {
+    height: var(--footer-height);
+  }
+
+  .short-content {
+    --header-height: 4rem;
+    --footer-height: 4rem;
+
+    min-height: calc(100vh - (var(--header-height) + var(--footer-height) + 5px));
   }
 }

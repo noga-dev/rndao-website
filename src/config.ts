@@ -47,30 +47,30 @@ export const SiteMetadata = {
   repository: 'https://github.com/luxumbra/rndao-website',
   social: [
     {
-      name: 'Email',
-      link: 'mailto:info@rndao.org',
-      icon: 'envelope',
+      name: 'Calendly',
+      link: 'https://calendly.com/rndao/research-chat',
+      icon: 'calendar-week',
     },
     {
       name: 'LinkedIn',
-      link: 'https://www.linkedin.com/rndao',
+      link: 'https://www.linkedin.com/company/rndao',
       icon: 'linkedin',
     },
     {
       name: 'Discord',
-      link: 'https://discord.gg/invite/rndao',
+      link: 'https://discord.gg/787EuEuG',
       icon: 'discord',
     },
     {
       name: 'Twitter',
-      link: 'https://twitter.com/rndao_',
+      link: 'https://twitter.com/rndao__',
       icon: 'twitter',
     },
-    {
-      name: 'Github',
-      link: 'https://github.com/rndao',
-      icon: 'github',
-    },
+    // {
+    //   name: 'Github',
+    //   link: 'https://github.com/rndao',
+    //   icon: 'github',
+    // },
   ],
   buildTime: new Date().toString(),
 }
@@ -84,6 +84,7 @@ export const DefaultImage = '../images/undraw/undraw_my_feed.png'
 export const NavigationLinks = [
   { name: 'Home', href: '' },
   { name: 'About', href: 'about' },
+  { name: 'Team', href: 'team' },
   { name: 'Contact', href: 'contact' },
   // { name: 'Blog', href: '/blog' },
   // { name: 'Docs', href: '/doc' },
@@ -146,7 +147,7 @@ export const PAGE_SIZE = 6
 
 export const GITHUB_EDIT_URL = `https://github.com/luxumbra/rndao-website`
 
-export const COMMUNITY_INVITE_URL = `https://discord.gg/invite/rndao`
+export const COMMUNITY_INVITE_URL = `https://discord.gg/787EuEuG`
 
 export type Sidebar = Record<string, { text: string; link: string }[]>
 
