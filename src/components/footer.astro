@@ -14,15 +14,7 @@ import SVGImg from '../components/svgimg.astro'
         <span class="sr-only">Logo</span>
       </a>
       <p class="text-sm text-gray-600 dark:text-gray-300 ml-2 pl-2 border-l-2 border-zinc-300 dark:border-zinc-600 py-1" >
-        © {new Date().getFullYear()} Copyright
-        <a
-          href="https://rndao.org"
-          class="ml-1 text-black hover:text-accent1 dark:text-zinc-300 dark:hover:text-accent2"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          RnDAO
-        </a>
+        © {new Date().getFullYear()} Copyright RnDAO
       </p>
     </span>
     <span class="flex-none flex flex-row items-center">
@@ -60,8 +52,8 @@ import SVGImg from '../components/svgimg.astro'
         </a>
       </p> -->
     </span>
-    <span
-      class="grow inline-flex lg:ml-auto justify-center lg:justify-end mt-2 lg:mt-0"
+    <div
+      class="grow inline-flex lg:ml-auto justify-center lg:justify-end mt-2 lg:mt-0 gap-x-3"
     >
       {
         SiteMetadata.social.map(s =>
@@ -80,6 +72,6 @@ import SVGImg from '../components/svgimg.astro'
           )
         )
       }
-    </span>
+    </div>
   </div>
 </footer>

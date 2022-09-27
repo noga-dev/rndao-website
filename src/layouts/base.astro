@@ -3,6 +3,7 @@ import type { Frontmatter } from '../config'
 import SEO from '../components/seo.astro'
 import Header from '../components/header.astro'
 import Footer from '../components/footer.astro'
+import SiteCredit from '../components/sitecredit.astro'
 import _ from 'lodash';
 import '../static/styles/index.css'
 import { Icon } from 'astro-icon'
@@ -106,11 +107,20 @@ const { frontmatter } = Astro.props
           const page = document.documentElement;
           const offset = page.scrollTop;
           const backToTop = document.querySelector('.back-to-top') as HTMLElement;
+          const siteCredit = document.querySelector('.site-credit') as HTMLElement;
 
           if (offset > 1200) {
             backToTop.classList.remove('invisible');
+            // siteCredit.classList.remove('invisible');
           } else {
             backToTop.classList.add('invisible');
+            // siteCredit.classList.add('invisible');
+          }
+
+          if (offset > page.scrollHeight - window.innerHeight - 100) {
+            siteCredit.classList.remove('invisible');
+          } else {
+            siteCredit.classList.add('invisible');
           }
           // tl.play();
         }, 200));
@@ -148,7 +158,9 @@ const { frontmatter } = Astro.props
       <Header />
       <slot />
       <Footer />
-      <a href="#top" class="group inline-flex invisible items-center back-to-top py-3 text-sm 2xl:text-lg text-normal uppercase font-sans fixed bottom-8 right-2 xl:bottom-24 2xl:right-16 z-40 transition-all duration-300 ease-in-out">Top  <Icon pack="emojione-monotone" name="index-pointing-up" class='h-5 w-5 2xl:h-8 2xl:w-8 inline '/></a>
+      <a href="#top" class="group inline-flex invisible items-center back-to-top py-3 text-sm 2xl:text-base text-normal uppercase font-sans fixed bottom-8 right-2 xl:bottom-24 2xl:right-16 z-40 transition-all duration-300 ease-in-out">Top  <Icon pack="emojione-monotone" name="index-pointing-up" class='h-5 w-5 2xl:h-8 2xl:w-8 inline '/></a>
+
+      <SiteCredit />
 
       {frontmatter.extra?.includes('markmap') &&
         <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>

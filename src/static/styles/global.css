@@ -31,17 +31,8 @@
         @apply hover:text-inherit;
       }
 
-      /* &[href^="http"] {
-        @apply inline-flex;
 
-        &::after {
-          @apply inline rounded-sm ml-1 text-xs -translate-y-1 -translate-x-1;
-
-          content: '↗';
-        }
-      }
-
-      &[href^="mailto:"] {
+      /* &[href^="mailto:"] {
         @apply inline-flex;
 
         &::after {
@@ -50,6 +41,20 @@
           content: '🖂';
         }
       } */
+    }
+  }
+
+  main {
+    a {
+      &[href^="http"] {
+        @apply inline-flex;
+
+        &::after {
+          @apply inline rounded-sm ml-1 text-xs -translate-y-1 -translate-x-1;
+
+          content: '↗';
+        }
+      }
     }
   }
 
@@ -161,5 +166,13 @@
     --footer-height: 4rem;
 
     min-height: calc(100vh - (var(--header-height) + var(--footer-height) + 5px));
+  }
+
+  .bg-dots {
+    @apply bg-zinc-900 bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-800;
+
+    background-image: url('../../svg/patterns/diagonal-lines.svg');
+    background-repeat: repeat;
+    /* background-size: 5%; */
   }
 }
