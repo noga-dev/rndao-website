@@ -24,8 +24,8 @@ const frontmatter: Frontmatter = {
     ' (total ' +
     page.total +
     ')',
-  coverSVG: '../svg/undraw/undraw_add_notes.svg',
-  socialImage: '../images/undraw/undraw_add_notes.png',
+    coverSVG: '../svg/headers/page-header.svg',
+  socialImage: '../images/social.png',
   publishDate: SiteMetadata.buildTime,
 }
 
@@ -63,7 +63,7 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
     <PaginateControl page={page} />
   </PageHero>
   </header>
-  <main class="mt-10 bg-gray-100 dark:bg-gray-900">
+  <main class="mt-10 bg-zinc-100 dark:bg-zinc-900">
     <BlogRoll posts={page.data} />
   </main>
 </Base>

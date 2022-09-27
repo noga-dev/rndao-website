@@ -78,8 +78,8 @@ export const SiteMetadata = {
 export const Logo = '../svg/brand/logo.svg'
 export const LogoImage = '../images/brand/logo.png'
 export const FeaturedSVG = '../svg/brand/hero.svg'
-export const DefaultSVG = '../svg/undraw/undraw_my_feed.svg'
-export const DefaultImage = '../images/undraw/undraw_my_feed.png'
+export const DefaultSVG = '../svg/brand/hero.svg'
+export const DefaultImage = '../images/social.png'
 
 export const NavigationLinks = [
   { name: 'Home', href: '' },
@@ -113,8 +113,8 @@ export function categoryDetail(category: string | undefined) {
   }
   return {
     category: 'General',
-    coverSVG: '../svg/undraw/undraw_instant_information.svg',
-    socialImage: '../images/undraw/undraw_instant_information.png',
+    coverSVG: '../svg/headers/page-header.svg',
+    socialImage: '../images/social.png',
     description: 'Category ' + category,
   }
 }

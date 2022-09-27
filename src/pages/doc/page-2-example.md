@@ -1,7 +1,7 @@
 ---
 section: Section Header
 title: Introduction
-description: RnDAO Docs intro
+description: Docs intro
 layout: ../../layouts/doc.astro
 ---
 
