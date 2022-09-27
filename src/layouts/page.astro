@@ -10,12 +10,11 @@ const { frontmatter } = Astro.props
 ---
 
 <Base frontmatter={frontmatter}>
-  <main class="dark:bg-zinc-900">
+  <main id="top" class="dark:bg-zinc-900">
     <article class="post min-h-screen">
       <header>
         <PageHero
           title={frontmatter.title}
-          description={frontmatter.description}
           coverSVG={frontmatter.coverSVG}
           socialImage={frontmatter.socialImage}
         />

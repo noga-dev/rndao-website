@@ -16,6 +16,7 @@ specifiers:
   '@tailwindcss/typography': ^0.5.7
   '@types/alpinejs': ^3.7.0
   '@types/leaflet': ^1.8.0
+  '@types/lodash': ^4.14.185
   alpinejs: ^3.10.3
   astro: 1.1.5
   astro-icon: ^0.7.3
@@ -27,6 +28,7 @@ specifiers:
   hero-patterns: ^2.1.0
   katex: ^0.16.2
   leaflet: ^1.8.0
+  lodash: ^4.17.21
   lunr: ^2.3.9
   mdast-util-to-string: ^3.1.0
   photoswipe: ^5.3.2
@@ -47,6 +49,7 @@ specifiers:
 dependencies:
   '@alpinejs/intersect': 3.10.3
   '@astrojs/rss': 1.0.1
+  '@types/lodash': 4.14.185
   astro-icon: 0.7.3
   astro-seo: 0.6.0
   autoprefixer: 10.4.11_postcss@8.4.16
@@ -54,6 +57,7 @@ dependencies:
   hero-patterns: 2.1.0
   katex: 0.16.2
   leaflet: 1.8.0
+  lodash: 4.17.21
   lunr: 2.3.9
   photoswipe: 5.3.2
   photoswipe-dynamic-caption-plugin: 1.2.4
@@ -787,6 +791,10 @@ packages:
     dependencies:
       '@types/geojson': 7946.0.10
     dev: true
+
+  /@types/lodash/4.14.185:
+    resolution: {integrity: sha512-evMDG1bC4rgQg4ku9tKpuMh5iBNEwNa3tf9zRHdP1qlv+1WUg44xat4IxCE14gIpZRGUUWAx2VhItCZc25NfMA==}
+    dev: false
 
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
@@ -2398,6 +2406,10 @@ packages:
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: true
+
+  /lodash/4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: false
 
   /log-symbols/5.1.0:
     resolution: {integrity: sha512-l0x2DvrW294C9uDCoQe1VSU4gf529FkSZ6leBl4TiqZH/e+0R7hSfHQBNut2mNygDgHwvYHfFLn6Oxb3VWj2rA==}

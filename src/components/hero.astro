@@ -33,12 +33,12 @@ import { FeaturedSVG } from '../config'
     </svg>
     <div class="absolute inset-y-0 w-full sm:w-[115%] h-screen bg-white dark:bg-zinc-900 z-[2]" />
   </div>
-  <div class="w-full lg:max-w-7xl mx-auto h-full">
+  <div class="w-full lg:max-w-6xl 2xl:max-w-7xl mx-auto h-full">
     <div
-      class="z-20 relative h-full lg:max-w-2xl lg:w-full items-center justify-center flex flex-col"
+      class="z-20 relative h-full lg:max-w-2xl lg:w-full items-start justify-center flex flex-col"
     >
       <main
-        class="relative flex items-center mx-auto max-w-7xl px-4 sm:px-0 sm:pr-12  z-20 h-full"
+        class="relative flex items-center 2xl:mx-auto w-full max-w-xl 2xl:max-w-7xl px-4 sm:px-0 sm:pr-12  z-20 h-full"
         x-data="{shown: false}"
         x-intersect.half="shown = true"
         x-intersect:leave="shown = false"
@@ -55,14 +55,14 @@ import { FeaturedSVG } from '../config'
           x-transition:leave-end="opacity-50 -translate-x-6"
         >
           <h1
-            class="text-4xl tracking-tight font-heading font-bold text-zinc-900 dark:text-zinc-50 xs:text-7xl sm:text-6xl text-left"
+            class="text-4xl xs:text-7xl xl:text-4xl 2xl:text-6xl tracking-tight font-heading font-bold text-zinc-900 dark:text-zinc-50  text-left"
           >
             <span class="block xl:inline">Get a razor sharp understanding of the market{' '}
             and your users.
             </span>
           </h1>
           <p
-            class="mt-5 text-sm text-gray-600 dark:text-zinc-300 text-left xs:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
+            class="mt-5 text-sm xs:text-lg xl:text-base 2xl:text-xl text-gray-600 dark:text-zinc-300 text-left  sm:max-w-xl sm:mx-auto md:mt-5  lg:mx-0"
           >
           Research-informed strategy helps you find product-market fit faster. Build with the confidence that you’re solving the right problem at the right time for the right user.
           </p>
@@ -72,7 +72,7 @@ import { FeaturedSVG } from '../config'
               <a
               role="button"
                 href="/contact"
-                class="btn glass w-full px-8 border border-transparent text-base font-bold rounded-md text-white hover:!text-white bg-zinc-600 hover:bg-zinc-700 dark:text-black dark:bg-zinc-400 dark:hover:bg-zinc-600  dark:hover:text-black md:text-lg md:px-10"
+                class="btn glass w-full px-8 border border-transparent font-bold rounded-md text-white hover:!text-white bg-zinc-600 hover:bg-zinc-700 dark:text-black dark:bg-zinc-400 dark:hover:bg-zinc-600  dark:hover:text-black  md:px-10"
               >
                 Connect
               </a>
@@ -80,7 +80,7 @@ import { FeaturedSVG } from '../config'
             <div class="mt-3 sm:mt-0 sm:ml-3">
               <a
                 href="#partner"
-                class="btn glass w-full flex items-center justify-center px-8 border border-transparent text-base font-bold rounded-md text-zinc-800 bg-zinc-400 hover:bg-zinc-500 dark:text-zinc-50 dark:bg-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-200 md:text-lg md:px-10"
+                class="btn glass w-full flex items-center justify-center px-8 border border-transparent font-bold rounded-md text-zinc-800 bg-zinc-400 hover:bg-zinc-500 dark:text-zinc-50 dark:bg-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-200 md:px-10"
               >
                 Learn more
               </a>
