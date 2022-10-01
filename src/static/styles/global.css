@@ -6,6 +6,7 @@
   :root {
     --header-height: 4rem;
     --footer-height: 4rem;
+    --color-shadow: rgba(0 0 0 / 80%);
   }
 
   body {
@@ -91,6 +92,48 @@
       @apply text-center text-zinc-900 dark:text-zinc-100 hover:text-zinc-500 dark:hover:text-zinc-400 transition-colors duration-200 ease-in;
     }
   }
+
+  .members {
+    grid-auto-rows: 1fr;
+  }
+  .team-member {
+    @apply m-0;
+    a {
+      &[href^="http"] {
+        @apply inline-block no-underline;
+
+        &::after {
+          @apply hidden !important;
+
+          content: '';
+        }
+      }
+
+      &:hover {
+        @apply text-zinc-500 dark:text-zinc-600;
+      }
+    }
+
+    &__underlay {
+      @apply absolute inset-0 z-0;
+
+      &::before {
+        @apply absolute inset-0 invert dark:invert-0 opacity-[0.02] group-hover:opacity-0 transition-opacity z-[5];
+        background-image: url('../../svg/brand/gtc-brand.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
+        object-fit: cover;
+        content: '';
+      }
+
+      &::after {
+        @apply absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-zinc-50 dark:to-zinc-900 opacity-50 dark:opacity-90 group-hover:opacity-40 transition-all  z-30 ;
+
+        content: '';
+      }
+    }
+  }
 }
 
 @layer utilities {
@@ -139,8 +182,24 @@
     ul {
       @apply list-none pl-0;
 
+      h3 {
+        @apply mb-1;
+
+        a {
+          @apply no-underline;
+        }
+
+        [href^="http"] {
+          @apply inline-block;
+
+          &::after {
+            @apply hidden;
+          }
+        }
+      }
+
       h3 + p {
-        @apply text-base lg:text-lg text-zinc-500 dark:text-zinc-400 italic;
+        @apply text-sm lg:text-base text-zinc-500 dark:text-zinc-400 italic;
       }
 
       p:first-of-type {
@@ -174,5 +233,52 @@
     background-image: url('../../svg/patterns/diagonal-lines.svg');
     background-repeat: repeat;
     /* background-size: 5%; */
+  }
+
+  .text-shadow {
+    text-shadow: none;
+    filter: drop-shadow(0 0 4px var(--color-shadow));
+    text-fill-color: transparent;
+    background-clip: text;
+
+    --webkit-text-fill-color: transparent;
+  }
+
+  .text-shadow-sm {
+    text-shadow: none;
+    filter: drop-shadow(0 0 6px var(--color-shadow));
+    text-fill-color: transparent;
+    background-clip: text;
+
+    --webkit-text-fill-color: transparent;
+  }
+
+  .text-shadow-md {
+    text-shadow: none;
+    filter: drop-shadow(0 0 10px var(--color-shadow));
+    text-fill-color: transparent;
+    background-clip: text;
+
+    --webkit-text-fill-color: transparent;
+  }
+
+  .text-shadow-lg {
+    text-shadow: none;
+    filter: drop-shadow(0 0 30px var(--color-shadow));
+    text-fill-color: transparent;
+    background-clip: text;
+
+    --webkit-text-fill-color: transparent;
+  }
+
+  .text-shadow-none {
+    text-shadow: none;
+    filter: none;
+  }
+
+  .shadow-inner-lg {
+    @apply shadow-inner;
+
+    box-shadow: 0 0 30px 0 var(--color-shadow);
   }
 }

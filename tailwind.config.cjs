@@ -33,6 +33,7 @@ module.exports = {
     screens: {
       'xs': '500px',
       ...defaultTheme.screens,
+      '3xl': '2560px',
     },
   },
   plugins: [

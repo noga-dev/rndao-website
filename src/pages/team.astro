@@ -1,0 +1,259 @@
+---
+import type { Frontmatter } from '~rndao/config'
+import { SiteMetadata } from '~rndao/config'
+import Base from '~rndao/layouts/base.astro'
+import PageHero from '~rndao/components/pagehero.astro'
+import { Client } from '@notionhq/client'
+import Img from '~rndao/components/img.astro'
+import { Icon } from 'astro-icon'
+import type {
+  PageObjectResponse,
+  PartialPageObjectResponse,
+  ListBlockChildrenResponse,
+  ListBlockChildrenParameters,
+  BlockObjectResponse,
+} from '~rndao/types'
+
+const notion = new Client({ auth: import.meta.env.VITE_NOTION_TOKEN })
+const databaseId = '4661a84f117642a6921b614881a41d24'
+
+/**
+ * @description Get all pages from the Team Directory database
+ * @returns {Promise<PageObjectResponse[] | PartialPageObjectResponse[]>} Array of pages/team members
+ */
+const fetchTeamDatabase = async (): Promise<
+  PageObjectResponse[] | PartialPageObjectResponse[] | undefined
+> => {
+  try {
+    const response = await notion.databases.query({
+      database_id: databaseId,
+      filter: {
+        property: 'Tagline',
+        rich_text: {
+          is_not_empty: true,
+        },
+      },
+    })
+
+    return response.results
+  } catch (error) {
+    console.log('Failed to fetch team database', { error })
+  }
+}
+
+/**
+ * @description Get a team member page from the Team Directory database
+ * @param {string} pageId - Notion page ID for a team member
+ * @returns {Promise<PageObjectResponse | PartialPageObjectResponse | undefined>} Team member page
+ */
+const fetchMemberPage = async (
+  pageId: string = ''
+): Promise<PageObjectResponse | PartialPageObjectResponse | undefined> => {
+  try {
+    const response = await notion.pages.retrieve({
+      page_id: pageId,
+    })
+
+    return response
+  } catch (error) {
+    console.log('Failed to fetch team page', { error })
+  }
+}
+
+const getTeamMemberBlocks = async (pageId = ''): Promise<any | undefined> => {
+  try {
+    const response = await notion.blocks.children.list({
+      block_id: pageId,
+    })
+
+    return response.results
+  } catch (error) {
+    console.log('Failed to fetch team member blocks', { error })
+  }
+}
+
+/**
+ * @description Get a team member's profile image from the Team Directory database
+ * @returns {Promise<any>} Team member profile image URL
+ */
+const getTeamPages = async (): Promise<any> => {
+  try {
+    const teamDatabase = await fetchTeamDatabase()
+
+    if (!teamDatabase) return
+    const teamPages = await Promise.all(
+      teamDatabase.map(async member => {
+        const page = await fetchMemberPage(member.id)
+
+        return page
+      })
+    )
+    const teamMembersBlocks = await Promise.all(
+      teamPages.map(async member => {
+        if (!member) return
+        const blocks = await getTeamMemberBlocks(member.id)
+
+        return blocks ?? []
+      })
+    )
+
+    return {
+      teamPages,
+      teamMembersBlocks,
+    }
+  } catch (error) {
+    console.log('Failed to fetch team pages', { error })
+  }
+}
+const { teamPages: teamMembers, teamMembersBlocks } = await getTeamPages()
+
+// const { teamMembers, teamMembersBlocks } = teamMembersData
+
+export interface ITeamMember {
+  title: any
+  name: any
+  icon: any
+}
+
+const frontmatter: Frontmatter = {
+  title: 'Core Team',
+  description:
+    'RnDAO is an innovation DAO, with a mission to empower humane collaboration. We’re funded by DAOs to serve DAOs and enable a humane vision of Web3.',
+  publishDate: '2022-08-08T00:00:00.000Z',
+  coverSVG: '../svg/headers/page-header.svg',
+  socialImage: '../images/social.png',
+}
+---
+
+<Base frontmatter={frontmatter}>
+  <main class="short-content">
+    <article class="post">
+      <header>
+        <PageHero
+          title={frontmatter.title}
+          coverSVG={frontmatter.coverSVG}
+          socialImage={frontmatter.socialImage}
+        />
+      </header>
+      <section
+        class="px-4 pb-10 lg:pb-16 lg:px-0 lg:mt-10 max-w-screen-lg mx-auto overflow-x-hidden"
+      >
+        <div class="my-8">
+          <!-- <h2 class="mb-10">Research Team</h2> -->
+          <ul class="members grid grid-cols-1 xs:grid-cols-2 xl:grid-cols-3 gap-5">
+            {
+              teamMembers &&
+                teamMembers.map((member, i) => {
+                  if (member) {
+                    const { Name, LinkedIn, Website, Tagline, Twitter } =
+                      member.properties
+                    const image = teamMembersBlocks.map((memberBlocks, i) => {
+                      if (memberBlocks) {
+                        const imageBlock = memberBlocks.find(
+                          (block: BlockObjectResponse) => {
+                            if (block.type === 'image') {
+                              return block
+                            }
+                          }
+                        )
+                        if (imageBlock) {
+                          return imageBlock.image.file.url
+                        }
+                      }
+                    })
+
+                    return (
+                      <li class="team-member group relative p-2 m-0 border-[2px] border-zinc-400 rounded-md transition-all duration-200 overflow-hidden">
+                        <div class="team-member__body relative w-full h-full translate-y-[70%] group-hover:translate-y-0 transition-all duration-300 z-20">
+                          <div class="flex flex-col p-2 xl:p-5 w-full h-full rounded-md transition-all">
+                            <div class="grow">
+                              <h3 class="p-0 text-zinc-800 dark:text-zinc-50">
+                                {member.icon !== null && member.icon.emoji } {Name.title[0].plain_text}
+                              </h3>
+                              <p class="text-xs xl:text-sm text-zinc-700 dark:text-zinc-100 translate-y-32 opacity-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100">
+                                {Tagline.rich_text[0].plain_text}
+                              </p>
+                            </div>
+                            <div class="inline-flex items-center mt-5 text-zinc-200 gap-3 shrink justify-start translate-y-32 opacity-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-200">
+                              {member.url && (
+                                <a
+                                  href={member.url}
+                                  target="_blank"
+                                  rel="noopener nofollow"
+                                  title={`${Name.title[0].plain_text}'s profile`}
+                                >
+                                  <Icon
+                                    pack="radix-icons"
+                                    name="notion-logo"
+                                    class="p-0 bg-zinc-600 text-white rounded-md shadow-md w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center hover:text-accent1 dark:hover:text-accent2 dark:bg-zinc-800 dark:text-white transition-all duration-300 ease-in-out"
+                                  />
+                                </a>
+                              )}
+                              {LinkedIn.url && (
+                                <a
+                                  href={LinkedIn.url}
+                                  target="_blank"
+                                  rel="noopener nofollow"
+                                  title={`${Name.title[0].plain_text} on LinkedIn`}
+                                >
+                                  <Icon
+                                    pack="mdi"
+                                    name="linkedin"
+                                    class="p-0 bg-zinc-600 text-white rounded-md shadow-md w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center hover:text-accent1 dark:hover:text-accent2 dark:bg-zinc-800 dark:text-white transition-all duration-300 ease-in-out"
+                                  />
+                                </a>
+                              )}
+                              {Twitter.rich_text[0] && (
+                                <a
+                                  href={`https://twitter.com/${Twitter.rich_text[0].plain_text}`}
+                                  target="_blank"
+                                  rel="noopener nofollow"
+                                  title={`${Name.title[0].plain_text} on Twitter`}
+                                >
+                                  <Icon
+                                    pack="mdi"
+                                    name="twitter"
+                                    class="p-0 bg-zinc-600 text-white rounded-md shadow-md w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center hover:text-accent1 dark:hover:text-accent2 dark:bg-zinc-800 dark:text-white transition-all duration-300 ease-in-out"
+                                  />
+                                </a>
+                              )}
+                              {Website.url && (
+                                <a
+                                  href={Website.url}
+                                  target="_blank"
+                                  rel="noopener nofollow"
+                                  title={`${Name.title[0].plain_text}'s website`}
+                                >
+                                  <Icon
+                                    pack="mdi"
+                                    name="web"
+                                    class="p-0 bg-zinc-600 text-white rounded-md shadow-md w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center hover:text-accent1 dark:hover:text-accent2 dark:bg-zinc-800 dark:text-white transition-all duration-300 ease-in-out"
+                                  />
+                                </a>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="team-member__underlay absolute inset-0 bg-zinc-100 dark:bg-zinc-700 z-0 ">
+                          {image[i] && i !== 7 && (
+                            <img
+                              src={image[i]}
+                              alt={Name.title[0].plain_text}
+                              width={400}
+                              height={400}
+                              class="relative rounded-md object-fit object-center h-auto min-h-full w-full group-hover:opacity-10 transition-all duration-200 grayscale z-20"
+                            />
+                            // <div class="absolute inset-0 top-auto h-full max-h-1/4 bg-gradient-to-t from-zinc-900 to-transparent z-0" />
+                          )}
+                        </div>
+                      </li>
+                    )
+                  }
+                })
+            }
+          </ul>
+        </div>
+      </section>
+    </article>
+  </main>
+</Base>
