@@ -4,13 +4,10 @@ import { SiteMetadata } from '~rndao/config'
 import Base from '~rndao/layouts/base.astro'
 import PageHero from '~rndao/components/pagehero.astro'
 import { Client } from '@notionhq/client'
-import Img from '~rndao/components/img.astro'
 import { Icon } from 'astro-icon'
 import type {
   PageObjectResponse,
   PartialPageObjectResponse,
-  ListBlockChildrenResponse,
-  ListBlockChildrenParameters,
   BlockObjectResponse,
 } from '~rndao/types'
 
@@ -116,10 +113,10 @@ export interface ITeamMember {
 }
 
 const frontmatter: Frontmatter = {
-  title: 'Core Team',
+  title: 'DAO Members',
   description:
     'RnDAO is an innovation DAO, with a mission to empower humane collaboration. We’re funded by DAOs to serve DAOs and enable a humane vision of Web3.',
-  publishDate: '2022-08-08T00:00:00.000Z',
+  publishDate: SiteMetadata.buildTime,
   coverSVG: '../svg/headers/page-header.svg',
   socialImage: '../images/social.png',
 }
@@ -163,14 +160,14 @@ const frontmatter: Frontmatter = {
                     })
 
                     return (
-                      <li class="team-member group relative p-2 m-0 border-[2px] border-zinc-400 rounded-md transition-all duration-200 overflow-hidden">
-                        <div class="team-member__body relative w-full h-full translate-y-[70%] group-hover:translate-y-0 transition-all duration-300 z-20">
-                          <div class="flex flex-col p-2 xl:p-5 w-full h-full rounded-md transition-all">
+                      <li class="team-member group relative p-0 m-0 border-[2px] border-zinc-400 rounded-md transition-all duration-200 overflow-hidden w-full pb-[100%]">
+                        <div class="team-member__body absolute inset-0 w-full h-full translate-y-[77%] xs:translate-y-[70%] lg:translate-y-[77%] group-hover:translate-y-0 transition-all duration-300 z-20">
+                          <div class="flex flex-col p-5 xl:p-6 w-full h-full rounded-md transition-all">
                             <div class="grow">
                               <h3 class="p-0 text-zinc-800 dark:text-zinc-50">
                                 {member.icon !== null && member.icon.emoji } {Name.title[0].plain_text}
                               </h3>
-                              <p class="text-xs xl:text-sm text-zinc-700 dark:text-zinc-100 translate-y-32 opacity-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100">
+                              <p class="text-xs xl:text-sm leading-tight text-zinc-700 dark:text-zinc-100 translate-y-32 opacity-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100">
                                 {Tagline.rich_text[0].plain_text}
                               </p>
                             </div>
@@ -236,14 +233,16 @@ const frontmatter: Frontmatter = {
                         </div>
                         <div class="team-member__underlay absolute inset-0 bg-zinc-100 dark:bg-zinc-700 z-0 ">
                           {image[i] && i !== 7 && (
-                            <img
-                              src={image[i]}
-                              alt={Name.title[0].plain_text}
-                              width={400}
-                              height={400}
-                              class="relative rounded-md object-fit object-center h-auto min-h-full w-full group-hover:opacity-10 transition-all duration-200 grayscale z-20"
-                            />
-                            // <div class="absolute inset-0 top-auto h-full max-h-1/4 bg-gradient-to-t from-zinc-900 to-transparent z-0" />
+                            <div class="avatar">
+                              <div class="w-full h-full rounded-md">
+                              <img
+                                src={image[i]}
+                                alt={`${Name.title[0].plain_text}'s avatar`}
+                                width="auto"
+                                height={500}
+                                class="group-hover:opacity-10 transition-all duration-200 grayscale z-20" />
+                            </div>
+                          </div>
                           )}
                         </div>
                       </li>
