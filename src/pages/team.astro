@@ -30,6 +30,12 @@ const fetchTeamDatabase = async (): Promise<
           is_not_empty: true,
         },
       },
+      sorts: [
+        {
+          property: 'Name',
+          direction: 'ascending',
+        },
+      ],
     })
 
     return response.results
@@ -137,7 +143,9 @@ const frontmatter: Frontmatter = {
       >
         <div class="my-8">
           <!-- <h2 class="mb-10">Research Team</h2> -->
-          <ul class="members grid grid-cols-1 xs:grid-cols-2 xl:grid-cols-3 gap-5">
+          <ul
+            class="members grid grid-cols-1 xs:grid-cols-2 xl:grid-cols-3 gap-5"
+          >
             {
               teamMembers &&
                 teamMembers.map((member, i) => {
@@ -165,7 +173,8 @@ const frontmatter: Frontmatter = {
                           <div class="flex flex-col p-5 xl:p-6 w-full h-full rounded-md transition-all">
                             <div class="grow">
                               <h3 class="p-0 text-zinc-800 dark:text-zinc-50">
-                                {member.icon !== null && member.icon.emoji } {Name.title[0].plain_text}
+                                {member.icon !== null && member.icon.emoji}{' '}
+                                {Name.title[0].plain_text}
                               </h3>
                               <p class="text-xs xl:text-sm leading-tight text-zinc-700 dark:text-zinc-100 translate-y-32 opacity-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100">
                                 {Tagline.rich_text[0].plain_text}
@@ -232,17 +241,18 @@ const frontmatter: Frontmatter = {
                           </div>
                         </div>
                         <div class="team-member__underlay absolute inset-0 bg-zinc-100 dark:bg-zinc-700 z-0 ">
-                          {image[i] && i !== 7 && (
+                          {image[i] && (
                             <div class="avatar">
                               <div class="w-full h-full rounded-md">
-                              <img
-                                src={image[i]}
-                                alt={`${Name.title[0].plain_text}'s avatar`}
-                                width="auto"
-                                height={500}
-                                class="group-hover:opacity-10 transition-all duration-200 grayscale z-20" />
+                                <img
+                                  src={image[i]}
+                                  alt={`${Name.title[0].plain_text}'s avatar`}
+                                  width="auto"
+                                  height={500}
+                                  class="group-hover:opacity-10 transition-all duration-200 grayscale z-20"
+                                />
+                              </div>
                             </div>
-                          </div>
                           )}
                         </div>
                       </li>
