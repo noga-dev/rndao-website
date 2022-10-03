@@ -1,6 +1,6 @@
 ---
-import SVGImg from '../components/svgimg.astro'
-import Img from '../components/img.astro'
+import SVGImg from '~rndao/components/svgimg.astro'
+import { Image } from '@astrojs/image/components'
 
 export interface Props {
   title: string
@@ -28,10 +28,14 @@ const { title, description, coverSVG, coverImage, socialImage } =
         height="384"
       />
     ) : (
-      <Img
-        src={coverImage || socialImage}
+      <Image
+        src={coverImage ?? socialImage}
         alt={title}
         class="absolute left-0 top-0 w-full h-full z-0 object-contain"
+        width="1280"
+        height="384"
+        position="top-center"
+        fit="cover"
       />
     )
   }

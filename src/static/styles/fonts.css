@@ -11,12 +11,14 @@
   font-family: 'DIN Alternate Bold';
   font-style: normal;
   font-weight: 900;
+  font-display: swap;
   src: url('../fonts/DINAlternate-Bold.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Inter';
-  src: url('../fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
 }

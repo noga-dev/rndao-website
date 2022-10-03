@@ -49,6 +49,7 @@
     "@astrojs/rss": "^1.0.1",
     "@notionhq/client": "^2.2.0",
     "@types/lodash": "^4.14.185",
+    "astro-eleventy-img": "^0.5.0",
     "astro-icon": "^0.7.3",
     "astro-seo": "^0.6.0",
     "autoprefixer": "^10.4.11",
@@ -59,6 +60,7 @@
     "lodash": "^4.17.21",
     "lunr": "^2.3.9",
     "photoswipe": "^5.3.2",
-    "photoswipe-dynamic-caption-plugin": "^1.2.4"
+    "photoswipe-dynamic-caption-plugin": "^1.2.4",
+    "sharp": "^0.31.1"
   }
 }

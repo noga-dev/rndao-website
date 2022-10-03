@@ -175,7 +175,7 @@
     }
 
     p:first-of-type {
-      @apply text-base md:text-xl text-center lg:text-left text-zinc-400 font-bold font-heading mt-5 lg:mt-0;
+      @apply text-base md:text-xl text-center lg:text-left text-zinc-600 dark:text-zinc-400 font-bold font-heading mt-5 lg:mt-0;
     }
 
 

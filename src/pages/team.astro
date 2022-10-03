@@ -4,6 +4,7 @@ import { SiteMetadata } from '~rndao/config'
 import Base from '~rndao/layouts/base.astro'
 import PageHero from '~rndao/components/pagehero.astro'
 import { Client } from '@notionhq/client'
+import { Image } from '@astrojs/image/components'
 import { Icon } from 'astro-icon'
 import type {
   PageObjectResponse,
@@ -168,7 +169,7 @@ const frontmatter: Frontmatter = {
                     })
 
                     return (
-                      <li class="team-member group relative p-0 m-0 border-[2px] border-zinc-400 rounded-md transition-all duration-200 overflow-hidden w-full pb-[100%]">
+                      <li class="team-member group relative p-0 m-0 transition-all duration-200 border-2 border-zinc-400 rounded-md overflow-hidden w-full pb-[calc(100%_-_4px)]">
                         <div class="team-member__body absolute inset-0 w-full h-full translate-y-[77%] xs:translate-y-[70%] lg:translate-y-[77%] group-hover:translate-y-0 transition-all duration-300 z-20">
                           <div class="flex flex-col p-5 xl:p-6 w-full h-full rounded-md transition-all">
                             <div class="grow">
@@ -176,11 +177,11 @@ const frontmatter: Frontmatter = {
                                 {member.icon !== null && member.icon.emoji}{' '}
                                 {Name.title[0].plain_text}
                               </h3>
-                              <p class="text-xs xl:text-sm leading-tight text-zinc-700 dark:text-zinc-100 translate-y-32 opacity-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100">
+                              <p class="text-xs xl:text-sm leading-tight text-zinc-700 dark:text-zinc-100 translate-y-32 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100">
                                 {Tagline.rich_text[0].plain_text}
                               </p>
                             </div>
-                            <div class="inline-flex items-center mt-5 text-zinc-200 gap-3 shrink justify-start translate-y-32 opacity-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-200">
+                            <div class="inline-flex items-center mt-5 text-zinc-200 gap-3 shrink justify-start translate-y-32 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-200">
                               {member.url && (
                                 <a
                                   href={member.url}
@@ -240,19 +241,22 @@ const frontmatter: Frontmatter = {
                             </div>
                           </div>
                         </div>
-                        <div class="team-member__underlay absolute inset-0 bg-zinc-100 dark:bg-zinc-700 z-0 ">
+                        <div class="team-member__underlay absolute inset-0 bg-zinc-100 dark:bg-zinc-700 contrast-more:bg-zinc-50 z-0 ">
                           {image[i] && (
-                            <div class="avatar">
                               <div class="w-full h-full rounded-md">
-                                <img
+                                <Image
                                   src={image[i]}
                                   alt={`${Name.title[0].plain_text}'s avatar`}
-                                  width="auto"
+                                  width={500}
                                   height={500}
+                                  position="center"
+                                  fit="cover"
+                                  format="jpg"
+                                  quality={80}
+                                  loading={'lazy'}
                                   class="group-hover:opacity-10 transition-all duration-200 grayscale z-20"
                                 />
                               </div>
-                            </div>
                           )}
                         </div>
                       </li>

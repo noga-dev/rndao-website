@@ -24,6 +24,7 @@
     "paths": {
       "~": ["src/*"],
       "~rndao/*": ["src/*"]
-    }
+    },
+    "types": ["@astrojs/image/client"]
   }
 }

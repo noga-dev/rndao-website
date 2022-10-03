@@ -23,7 +23,16 @@ export default defineConfig({
   site: 'https://rndao.luxumbra.dev',
   base: '/',
   output: 'static',
-  integrations: [tailwind(), sitemap(), image(), mdx(), alpinejs(), robotsTxt()],
+  integrations: [
+    tailwind(),
+    sitemap(),
+    image({
+      serviceEntryPoint: '@astrojs/image/sharp'
+    }),
+    mdx(),
+    alpinejs(),
+    robotsTxt()
+  ],
   experimental: {
     integrations: true,
   },

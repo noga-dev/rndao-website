@@ -6,6 +6,7 @@ import { Icon } from 'astro-icon'
   <div>
     <button
       type="button"
+      aria-label="Toggle theme"
       class="btn inline-flex items-center justify-center w-full rounded-md border border-zinc-300 dark:border-0 shadow-sm px-4 py-2 bg-white dark:bg-black text-sm font-medium text-gray-700 dark:text-zinc-100 hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-300 dark:focus:ring-offset-zinc-700 focus:ring-zinc-500"
       id="menu-button"
       aria-expanded="true"
@@ -77,7 +78,7 @@ import { Icon } from 'astro-icon'
     </li>
     <li
       class="text-gray-900 hover:text-white hover:bg-zinc-600 dark:bg-zinc-900 dark:text-white dark:hover:text-zinc-900 dark:hover:bg-zinc-300 cursor-default select-none relative py-2 pl-2 pr-4"
-      id="listbox-option-0"
+      id="listbox-option-1"
       role="option"
       x-on:click="localStorage.theme = 'light'; window.location.reload()"
     >
@@ -96,7 +97,7 @@ import { Icon } from 'astro-icon'
     </li>
     <li
       class="text-gray-900 hover:text-white hover:bg-zinc-600 dark:bg-zinc-900 dark:text-white dark:hover:text-zinc-900 dark:hover:bg-zinc-300 cursor-default select-none relative py-2 pl-2 pr-4"
-      id="listbox-option-0"
+      id="listbox-option-2"
       role="option"
       x-on:click="localStorage.theme = 'dark'; window.location.reload()"
     >
