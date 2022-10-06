@@ -20,7 +20,7 @@ export default defineConfig({
     },
   },
   server: { port: 1144 },
-  site: 'https://rndao.luxumbra.dev',
+  site: 'https://rndao.info',
   base: '/',
   output: 'static',
   integrations: [

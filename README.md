@@ -10,7 +10,7 @@ Currently there's two main branches: `main` and `develop`.  `main` is the produc
 
 PRs need an approval from at least one other person before they can be merged, currently only lux has those permissions.
 
-`main` is deployed to https://rndao.luxumbra.dev/
+`main` is deployed to https://rndao.info/
 
 `develop` is deployed to https://staging.rndao.luxumbra.dev/
 
