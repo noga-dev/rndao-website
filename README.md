@@ -2,7 +2,7 @@
 A starting point for the RNDAO website.
 
 ## :construction_worker: Contributing
-The site was stood up in 3 days, so the code is a little messy. I've done a good chunk of responsive work. Mobile is pretty good but there's still some bits to do on tablet & laptop screens.
+The site was initially stood up in 3 days, so the code is a little messy. 
 
 If you'd like to contribute, (while the repo is private) please contact @luxumbra for access. When / if it goes public, you can fork the repo and submit a PR.
 
@@ -12,7 +12,7 @@ PRs need an approval from at least one other person before they can be merged, c
 
 `main` is deployed to https://rndao.info/
 
-`develop` is deployed to https://staging.rndao.luxumbra.dev/
+`develop` should be deployed to a staging url.
 
 PR previews get assigned a URL when they're created.
 
