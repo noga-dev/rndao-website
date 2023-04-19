@@ -3,15 +3,17 @@ import SVGImg from '../components/svgimg.astro'
 import { FeaturedSVG } from '../config'
 ---
 
-<div class="relative bg-white dark:bg-zinc-900 border-t-[1px] border-zinc-900 overflow-hidden w-full sm:h-screen">
-  <div class=" lg:max-w-6xl 2xl:max-w-7xl mx-auto h-full">
+<div
+  class="relative bg-white dark:bg-zinc-900 border-t-[1px] border-zinc-900 overflow-hidden w-full sm:h-screen"
+>
+  <div class="lg:max-w-6xl 2xl:max-w-7xl mx-auto h-full">
     <div
       class="z-10 relative pb-8 sm:pb-16 md:pb-20 lg:w-7xl lg:pb-28 xl:pb-32 px-5 lg:px-0 bg-white dark:bg-zinc-900"
     >
       <main
-        class="relative flex flex-col lg:flex-row justify-between pt-10 mx-auto w-full  sm:pt-12 md:pt-16 lg:pt-20 xl:pt-28 z-20 "
+        class="relative flex flex-col lg:flex-row justify-between pt-10 mx-auto w-full sm:pt-12 md:pt-16 lg:pt-20 xl:pt-28 z-20"
         x-data="{shown: false}"
-        x-intersect.threshold.75="shown = true"
+        x-intersect:threshold.75="shown = true"
         x-intersect:leave="shown = false"
       >
         <div
@@ -25,21 +27,32 @@ import { FeaturedSVG } from '../config'
           x-transition:leave-end="opacity-50 translate-y-6"
         >
           <h2
-            class="text-4xl xs:text-5xl lg:text-3xl 2xl:text-4xl tracking-tight font-heading font-black text-zinc-900 dark:text-zinc-50 text-left "
+            class="text-4xl xs:text-5xl lg:text-3xl 2xl:text-4xl tracking-tight font-heading font-black text-zinc-900 dark:text-zinc-50 text-left"
           >
-            <span class="block xl:inline">Research that gives you clarity and conviction.
+            <span class="block xl:inline"
+              >Research that gives you clarity and conviction.
             </span>
           </h2>
           <p
-            class="mt-3 text-base 2xl:text-lg text-gray-600 dark:text-zinc-300 sm:mt-5  sm:max-w-2xl xl:max-w-lg sm:mx-auto md:mt-5  lg:mx-0"
+            class="mt-3 text-base 2xl:text-lg text-gray-600 dark:text-zinc-300 sm:mt-5 sm:max-w-2xl xl:max-w-lg sm:mx-auto md:mt-5 lg:mx-0"
           >
-          Our research process is designed to take you from uncertainty to product-market fit.
+            Our research process is designed to take you from uncertainty to
+            product-market fit.
           </p>
 
-          <div class="flex flex-col space-y-3 my-8 sm:my-5 text-sm 2xl:text-base">
+          <div
+            class="flex flex-col space-y-3 my-8 sm:my-5 text-sm 2xl:text-base"
+          >
             <!-- <h3 class="text-lg text-zinc-200">Expert researchers and facilitators</h3> -->
-            <p>Our client-facing team has led research in both Web3 (Aragon, Sobol, etc) and Web2 (Intuit, Google, McKinsey, etc).  We've facilitated workshops for nimble startups, leading tech corporates, and even the UN. We believe in deep alignment and leaving no stone unturned, ensuring the decisions that come out are top quality.</p>
-           </div>
+            <p>
+              Our client-facing team has led research in both Web3 (Aragon,
+              Sobol, etc) and Web2 (Intuit, Google, McKinsey, etc). We've
+              facilitated workshops for nimble startups, leading tech
+              corporates, and even the UN. We believe in deep alignment and
+              leaving no stone unturned, ensuring the decisions that come out
+              are top quality.
+            </p>
+          </div>
         </div>
         <div
           class="lg:w-1/2 lg:max-w-lg"
@@ -51,21 +64,40 @@ import { FeaturedSVG } from '../config'
           x-transition:leave-start="opacity-100 translate-x-0"
           x-transition:leave-end="opacity-0 translate-x-6"
         >
-          <ul class="grid mt-3 justify-end items-center w-full gap-5 list-none text-sm 2xl:text-base">
+          <ul
+            class="grid mt-3 justify-end items-center w-full gap-5 list-none text-sm 2xl:text-base"
+          >
             <li class="inline-flex flex-col space-y-2">
               <h3 class="text-gradient-basic">Research Strategy Workshop</h3>
-              <p>Identify the assumptions and define the questions that enable you to choose the right strategy.</p></li>
+              <p>
+                Identify the assumptions and define the questions that enable
+                you to choose the right strategy.
+              </p>
+            </li>
             <li class="inline-flex flex-col space-y-2">
-              <h3 class="text-gradient-basic">Research Sprint: the landscape of the problem</h3>
-              <p>We do the grunt work and balance with tight research cycles to get you an overview of the problem space, quickly and methodically.</p>
+              <h3 class="text-gradient-basic">
+                Research Sprint: the landscape of the problem
+              </h3>
+              <p>
+                We do the grunt work and balance with tight research cycles to
+                get you an overview of the problem space, quickly and
+                methodically.
+              </p>
             </li>
             <li class="inline-flex flex-col space-y-2">
               <h3 class="text-gradient-basic">Research Sprint: deep dive</h3>
-              <p>We dig deeper into the most promising areas for you, to uncover deep and actionable insights you can build upon.</p>
+              <p>
+                We dig deeper into the most promising areas for you, to uncover
+                deep and actionable insights you can build upon.
+              </p>
             </li>
             <li class="inline-flex flex-col space-y-2">
               <h3 class="text-gradient-basic">Product Strategy Workshops</h3>
-              <p>We facilitate strategy sessions with your team and our researchers to identify your sweet spot between user needs, team capabilities, and business opportunity.</p>
+              <p>
+                We facilitate strategy sessions with your team and our
+                researchers to identify your sweet spot between user needs, team
+                capabilities, and business opportunity.
+              </p>
             </li>
           </ul>
         </div>

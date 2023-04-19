@@ -1,8 +1,9 @@
 ---
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon'
 import SVGImg from '../components/svgimg.astro'
 import { FeaturedSVG } from '../config'
 ---
+
 <script>
   import Alpine from 'alpinejs'
   import intersect from '@alpinejs/intersect'
@@ -12,65 +13,104 @@ import { FeaturedSVG } from '../config'
     Alpine.start()
   }
 </script>
-<div class="relative bg-white dark:bg-zinc-900 overflow-hidden sm:h-screen  border-t-[1px] border-zinc-900">
-  <div class="hidden lg:block lg:absolute  inset-y-0 -left-20 h-screen w-1/2 lg:-translate-x-8 z-[2]">
-    <svg
-    class="hidden lg:block absolute -right-1/4 inset-y-0 -top-0 h-screen w-48 text-white dark:text-zinc-900 transform z-[1]"
-    fill="currentColor"
-    viewBox="0 0 100 100"
-    preserveAspectRatio="none"
-    aria-hidden="true"
+<div
+  class="relative bg-white dark:bg-zinc-900 overflow-hidden sm:h-screen border-t-[1px] border-zinc-900"
+>
+  <div
+    class="hidden lg:block lg:absolute inset-y-0 -left-20 h-screen w-1/2 lg:-translate-x-8 z-[2]"
   >
-    <polygon points="25,0 100,0 75,100 0,100"></polygon>
+    <svg
+      class="hidden lg:block absolute -right-1/4 inset-y-0 -top-0 h-screen w-48 text-white dark:text-zinc-900 transform z-[1]"
+      fill="currentColor"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <polygon points="25,0 100,0 75,100 0,100"></polygon>
     </svg>
     <svg
-    class="hidden lg:block absolute -right-1/4 inset-y-0 h-screen w-48 text-black dark:text-black transform z-0 opacity-50 blur-xl"
-    fill="currentColor"
-    viewBox="0 0 100 100"
-    preserveAspectRatio="none"
-    aria-hidden="true"
-  >
-    <polygon points="25,0 100,0 75,100 0,100"></polygon>
+      class="hidden lg:block absolute -right-1/4 inset-y-0 h-screen w-48 text-black dark:text-black transform z-0 opacity-50 blur-xl"
+      fill="currentColor"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <polygon points="25,0 100,0 75,100 0,100"></polygon>
     </svg>
-    <div class="absolute inset-y-0 w-full sm:w-[115%] h-screen bg-white dark:bg-zinc-900 z-[2]" />
+    <div
+      class="absolute inset-y-0 w-full sm:w-[115%] h-screen bg-white dark:bg-zinc-900 z-[2]"
+    >
+    </div>
   </div>
 
   <div class="content-wrapper xl:max-w-6xl 2xl:max-w-7xl mx-auto h-full">
     <div
-      class="z-10 relative pb-16 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 "
+      class="z-10 relative pb-16 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32"
     >
       <main
-        class="relative pt-16 mx-auto max-w-7xl px-4 sm:pt-12 sm:px-0 sm:pr-12 md:pt-16 lg:pt-20 lg:px-0 lg:pr-16 xl:pt-28 z-20 "
+        class="relative pt-16 mx-auto max-w-7xl px-4 sm:pt-12 sm:px-0 sm:pr-12 md:pt-16 lg:pt-20 lg:px-0 lg:pr-16 xl:pt-28 z-20"
         x-data="{shown: false}"
-        x-intersect.half="shown = true"
+        x-intersect:half="shown = true"
         x-intersect:leave="shown = false"
       >
-        <div class="text-left"
-        x-show="shown"
-        x-transition:enter="transform transition ease-out duration-300"
-        x-transition:enter-start="opacity-0"
-        x-transition:enter-end="opacity-100"
-        x-transition:leave="transition ease-in duration-75 transform"
-        x-transition:leave-start="opacity-100"
-        x-transition:leave-end="opacity-0"
+        <div
+          class="text-left"
+          x-show="shown"
+          x-transition:enter="transform transition ease-out duration-300"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition ease-in duration-75 transform"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
         >
           <h2
-            class="text-4xl xs:text-5xl lg:text-3xl 2xl:text-4xl tracking-tight font-heading font-black text-zinc-900 dark:text-zinc-50 text-left  "
+            class="text-4xl xs:text-5xl lg:text-3xl 2xl:text-4xl tracking-tight font-heading font-black text-zinc-900 dark:text-zinc-50 text-left"
           >
-            <span class="block xl:inline">Good Research uncovers Clear Problems making Great Products.
+            <span class="block xl:inline"
+              >Good Research uncovers Clear Problems making Great Products.
             </span>
           </h2>
           <p
-            class="mt-3 text-base 2xl:text-lg text-gray-600 dark:text-zinc-300 sm:mt-5  sm:max-w-2xl xl:max-w-lg sm:mx-auto md:mt-5  lg:mx-0"
+            class="mt-3 text-base 2xl:text-lg text-gray-600 dark:text-zinc-300 sm:mt-5 sm:max-w-2xl xl:max-w-lg sm:mx-auto md:mt-5 lg:mx-0"
           >
-          When a team deeply understands the problem they’re solving, there’s confidence, alignment and prioritisation are smooth, and defining solution-experiments is easy and can be done methodically. This results in great products that delight customers.
+            When a team deeply understands the problem they’re solving, there’s
+            confidence, alignment and prioritisation are smooth, and defining
+            solution-experiments is easy and can be done methodically. This
+            results in great products that delight customers.
           </p>
 
-          <p class="mt-3 text-base 2xl:text-lg text-zinc-700 dark:text-zinc-300 sm:mt-5 sm:max-w-xl sm:mx-auto md:mt-5  lg:mx-0">And yet, in many startups&hellip;</p>
-          <ul class="mt-3 flex flex-col justify-start items-center lg:w-10/12 gap-3 text-sm 2xl:text-base text-zinc-600 dark:text-zinc-300">
-            <li class="inline-flex items-start"><Icon pack="ph" name="heart-break-duotone" class="w-10 h-10 mt-1 mr-3 flex-none" /> Research is skipped, products are built on assumptions, and countless hours of dev time are lost.</li>
-            <li class="inline-flex items-start"><Icon pack="ph" name="heart-break-duotone" class="w-10 h-10 mt-1 mr-3 flex-none" />Poorly conducted research gives false confirmations and unreliable conclusions.</li>
-            <li class="inline-flex items-start"><Icon pack="ph" name="heart-break-duotone" class="w-10 h-10 mt-1 mr-3 flex-none" />And even when there is good research, there’s a gap between insights and strategy.</li>
+          <p
+            class="mt-3 text-base 2xl:text-lg text-zinc-700 dark:text-zinc-300 sm:mt-5 sm:max-w-xl sm:mx-auto md:mt-5 lg:mx-0"
+          >
+            And yet, in many startups&hellip;
+          </p>
+          <ul
+            class="mt-3 flex flex-col justify-start items-center lg:w-10/12 gap-3 text-sm 2xl:text-base text-zinc-600 dark:text-zinc-300"
+          >
+            <li class="inline-flex items-start">
+              <Icon
+                pack="ph"
+                name="heart-break-duotone"
+                class="w-10 h-10 mt-1 mr-3 flex-none"
+              /> Research is skipped, products are built on assumptions, and countless
+              hours of dev time are lost.
+            </li>
+            <li class="inline-flex items-start">
+              <Icon
+                pack="ph"
+                name="heart-break-duotone"
+                class="w-10 h-10 mt-1 mr-3 flex-none"
+              />Poorly conducted research gives false confirmations and
+              unreliable conclusions.
+            </li>
+            <li class="inline-flex items-start">
+              <Icon
+                pack="ph"
+                name="heart-break-duotone"
+                class="w-10 h-10 mt-1 mr-3 flex-none"
+              />And even when there is good research, there’s a gap between
+              insights and strategy.
+            </li>
           </ul>
         </div>
       </main>

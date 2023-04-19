@@ -58,7 +58,7 @@ export const SiteMetadata = {
     },
     {
       name: 'Discord',
-      link: 'https://discord.gg/787EuEuG',
+      link: 'https://discord.gg/bPZam227zj',
       icon: 'discord',
     },
     {

@@ -80,11 +80,14 @@ const getTeamMemberBlocks = async (pageId = ''): Promise<any | undefined> => {
  * @description Get a team member's profile image from the Team Directory database
  * @returns {Promise<any>} Team member profile image URL
  */
-const getTeamPages = async (): Promise<any> => {
+const getTeamPages = async (): Promise<any | undefined> => {
   try {
     const teamDatabase = await fetchTeamDatabase()
 
-    if (!teamDatabase) return
+    if (!teamDatabase) {
+      return {}
+    }
+
     const teamPages = await Promise.all(
       teamDatabase.map(async member => {
         const page = await fetchMemberPage(member.id)
@@ -107,9 +110,10 @@ const getTeamPages = async (): Promise<any> => {
     }
   } catch (error) {
     console.log('Failed to fetch team pages', { error })
+    return {}
   }
 }
-const { teamPages: teamMembers, teamMembersBlocks } = await getTeamPages()
+const { teamPages, teamMembersBlocks } = await getTeamPages()
 
 // const { teamMembers, teamMembersBlocks } = teamMembersData
 
@@ -148,40 +152,53 @@ const frontmatter: Frontmatter = {
             class="members grid grid-cols-1 xs:grid-cols-2 xl:grid-cols-3 gap-5"
           >
             {
-              teamMembers &&
-                teamMembers.map((member, i) => {
+              () => {
+                if (teamPages == undefined) {
+                  return (
+                    <div class="m-8">
+                      <span>Failed to fetch users from notion database</span>
+                    </div>
+                  )
+                }
+              }
+            }
+            {
+              teamPages &&
+                teamPages.map((member: any, i: any) => {
                   if (member) {
                     const { Name, LinkedIn, Website, Tagline, Twitter } =
                       member.properties
-                    const image = teamMembersBlocks.map((memberBlocks, i) => {
-                      if (memberBlocks) {
-                        const imageBlock = memberBlocks.find(
-                          (block: BlockObjectResponse) => {
-                            if (block.type === 'image') {
-                              return block
+                    const image = teamMembersBlocks.map(
+                      (memberBlocks: any, i: any) => {
+                        if (memberBlocks) {
+                          const imageBlock = memberBlocks.find(
+                            (block: BlockObjectResponse) => {
+                              if (block.type === 'image') {
+                                return block
+                              }
                             }
+                          )
+                          if (imageBlock) {
+                            return imageBlock.image.file.url
                           }
-                        )
-                        if (imageBlock) {
-                          return imageBlock.image.file.url
                         }
                       }
-                    })
+                    )
 
                     return (
-                      <li class="team-member group relative p-0 m-0 transition-all duration-200 border-2 border-zinc-400 rounded-md overflow-hidden w-full pb-[calc(100%_-_4px)]">
-                        <div class="team-member__body absolute inset-0 w-full h-full translate-y-[77%] xs:translate-y-[70%] lg:translate-y-[77%] group-hover:translate-y-0 transition-all duration-300 z-20">
-                          <div class="flex flex-col p-5 xl:p-6 w-full h-full rounded-md transition-all">
+                      <li class="team-member group relative m-0 w-full overflow-hidden rounded-md border-2 border-zinc-400 p-0 pb-[calc(100%_-_4px)] transition-all duration-200">
+                        <div class="team-member__body absolute inset-0 z-20 h-full w-full translate-y-[77%] transition-all duration-300 group-hover:translate-y-0 xs:translate-y-[70%] lg:translate-y-[77%]">
+                          <div class="flex h-full w-full flex-col rounded-md p-5 transition-all xl:p-6">
                             <div class="grow">
                               <h3 class="p-0 text-zinc-800 dark:text-zinc-50">
                                 {member.icon !== null && member.icon.emoji}{' '}
                                 {Name.title[0].plain_text}
                               </h3>
-                              <p class="text-xs xl:text-sm leading-tight text-zinc-700 dark:text-zinc-100 translate-y-32 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100">
+                              <p class="translate-y-32 leading-tight text-zinc-700 opacity-0 transition-all delay-100 duration-300 text-xs group-hover:translate-y-0 group-hover:opacity-100 dark:text-zinc-100 xl:text-sm">
                                 {Tagline.rich_text[0].plain_text}
                               </p>
                             </div>
-                            <div class="inline-flex items-center mt-5 text-zinc-200 gap-3 shrink justify-start translate-y-32 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-200">
+                            <div class="mt-5 inline-flex shrink translate-y-32 items-center justify-start gap-3 text-zinc-200 opacity-0 transition-all delay-200 duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                               {member.url && (
                                 <a
                                   href={member.url}
@@ -192,7 +209,7 @@ const frontmatter: Frontmatter = {
                                   <Icon
                                     pack="radix-icons"
                                     name="notion-logo"
-                                    class="p-0 bg-zinc-600 text-white rounded-md shadow-md w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center hover:text-accent1 dark:hover:text-accent2 dark:bg-zinc-800 dark:text-white transition-all duration-300 ease-in-out"
+                                    class="flex h-8 w-8 items-center justify-center rounded-md bg-zinc-600 p-0 text-white shadow-md transition-all duration-300 ease-in-out hover:text-accent1 dark:bg-zinc-800 dark:text-white dark:hover:text-accent2 lg:h-10 lg:w-10"
                                   />
                                 </a>
                               )}
@@ -206,7 +223,7 @@ const frontmatter: Frontmatter = {
                                   <Icon
                                     pack="mdi"
                                     name="linkedin"
-                                    class="p-0 bg-zinc-600 text-white rounded-md shadow-md w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center hover:text-accent1 dark:hover:text-accent2 dark:bg-zinc-800 dark:text-white transition-all duration-300 ease-in-out"
+                                    class="flex h-8 w-8 items-center justify-center rounded-md bg-zinc-600 p-0 text-white shadow-md transition-all duration-300 ease-in-out hover:text-accent1 dark:bg-zinc-800 dark:text-white dark:hover:text-accent2 lg:h-10 lg:w-10"
                                   />
                                 </a>
                               )}
@@ -220,7 +237,7 @@ const frontmatter: Frontmatter = {
                                   <Icon
                                     pack="mdi"
                                     name="twitter"
-                                    class="p-0 bg-zinc-600 text-white rounded-md shadow-md w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center hover:text-accent1 dark:hover:text-accent2 dark:bg-zinc-800 dark:text-white transition-all duration-300 ease-in-out"
+                                    class="flex h-8 w-8 items-center justify-center rounded-md bg-zinc-600 p-0 text-white shadow-md transition-all duration-300 ease-in-out hover:text-accent1 dark:bg-zinc-800 dark:text-white dark:hover:text-accent2 lg:h-10 lg:w-10"
                                   />
                                 </a>
                               )}
@@ -234,29 +251,29 @@ const frontmatter: Frontmatter = {
                                   <Icon
                                     pack="mdi"
                                     name="web"
-                                    class="p-0 bg-zinc-600 text-white rounded-md shadow-md w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center hover:text-accent1 dark:hover:text-accent2 dark:bg-zinc-800 dark:text-white transition-all duration-300 ease-in-out"
+                                    class="flex h-8 w-8 items-center justify-center rounded-md bg-zinc-600 p-0 text-white shadow-md transition-all duration-300 ease-in-out hover:text-accent1 dark:bg-zinc-800 dark:text-white dark:hover:text-accent2 lg:h-10 lg:w-10"
                                   />
                                 </a>
                               )}
                             </div>
                           </div>
                         </div>
-                        <div class="team-member__underlay absolute inset-0 bg-zinc-100 dark:bg-zinc-700 contrast-more:bg-zinc-50 z-0 ">
+                        <div class="team-member__underlay absolute inset-0 z-0 bg-zinc-100 contrast-more:bg-zinc-50 dark:bg-zinc-700 ">
                           {image[i] && (
-                              <div class="w-full h-full rounded-md">
-                                <Image
-                                  src={image[i]}
-                                  alt={`${Name.title[0].plain_text}'s avatar`}
-                                  width={500}
-                                  height={500}
-                                  position="center"
-                                  fit="cover"
-                                  format="jpg"
-                                  quality={80}
-                                  loading={'lazy'}
-                                  class="group-hover:opacity-10 transition-all duration-200 grayscale z-20"
-                                />
-                              </div>
+                            <div class="h-full w-full rounded-md">
+                              <Image
+                                src={image[i]}
+                                alt={`${Name.title[0].plain_text}'s avatar`}
+                                width={500}
+                                height={500}
+                                position="center"
+                                fit="cover"
+                                format="jpg"
+                                quality={80}
+                                loading={'lazy'}
+                                class="z-20 grayscale transition-all duration-200 group-hover:opacity-10"
+                              />
+                            </div>
                           )}
                         </div>
                       </li>

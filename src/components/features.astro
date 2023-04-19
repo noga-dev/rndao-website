@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon'
-
 ---
+
 <script>
   import Alpine from 'alpinejs'
   import intersect from '@alpinejs/intersect'
@@ -13,11 +13,11 @@ import { Icon } from 'astro-icon'
 </script>
 <div
   id="partner"
-  class="py-12 bg-gray-100 dark:bg-zinc-800 border-t-[1px] border-zinc-900  w-full min-h-[75vh]"
+  class="py-12 bg-gray-100 dark:bg-zinc-800 border-t-[1px] border-zinc-900 w-full min-h-[75vh]"
   x-data="{shown: false}"
-  x-intersect.half="shown = true"
+  x-intersect:half="shown = true"
   x-intersect:leave="shown = false"
-  >
+>
   <div
     class="lg:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 py-10 lg:py-16"
     x-cloak
@@ -36,59 +36,77 @@ import { Icon } from 'astro-icon'
         Partner with us
       </h2>
       <p
-        class="mt-2 text-lg  xl:text-xl 2xl:text-3xl leading-8 font-black tracking-tight text-gray-900 dark:text-gray-100"
+        class="mt-2 text-lg xl:text-xl 2xl:text-3xl leading-8 font-black tracking-tight text-gray-900 dark:text-gray-100"
       >
-      Partnering with RnDAO is for you if:
+        Partnering with RnDAO is for you if:
       </p>
-      <ul class="flex flex-col space-y-5 xl:space-y-2 2xl:space-y-5 mt-4 ml-0 max-w-4xl text-sm lg:text-base 2xl:text-lg text-gray-600 dark:text-gray-300 text-left">
+      <ul
+        class="flex flex-col space-y-5 xl:space-y-2 2xl:space-y-5 mt-4 ml-0 max-w-4xl text-sm lg:text-base 2xl:text-lg text-gray-600 dark:text-gray-300 text-left"
+      >
         <li class="pl-0 inline-flex items-center">
           <Icon
-          class="h-12 w-12 mr-3 flex-none "
-          aria-hidden="true"
-          pack="heroicons-outline"
-          name="check"
-        />
-        <span>You are working in a challenging market</span></li>
+            class="h-12 w-12 mr-3 flex-none"
+            aria-hidden="true"
+            pack="heroicons-outline"
+            name="check"
+          />
+          <span>You are working in a challenging market</span>
+        </li>
         <li class="pl-0 inline-flex items-center justify-start">
           <Icon
-          class="h-12 w-12 mr-3 flex-none"
-          aria-hidden="true"
-          pack="heroicons-outline"
-          name="check"
-        />
-        <span>You have a new idea, and want to know how to position it so it’s valued instead of ignored</span></li>
+            class="h-12 w-12 mr-3 flex-none"
+            aria-hidden="true"
+            pack="heroicons-outline"
+            name="check"
+          />
+          <span
+            >You have a new idea, and want to know how to position it so it’s
+            valued instead of ignored</span>
+        </li>
         <li class="pl-0 inline-flex items-center">
           <Icon
-          class="h-12 w-12 mr-3 flex-none"
-          aria-hidden="true"
-          pack="heroicons-outline"
-          name="check"
-        />
-        <span>Sales and adoption haven’t picked up as hoped, and you want to know why</span></li>
+            class="h-12 w-12 mr-3 flex-none"
+            aria-hidden="true"
+            pack="heroicons-outline"
+            name="check"
+          />
+          <span
+            >Sales and adoption haven’t picked up as hoped, and you want to know
+            why</span>
+        </li>
         <li class="pl-0 inline-flex items-center">
           <Icon
-          class="h-12 w-12 mr-3 flex-none"
-          aria-hidden="true"
-          pack="heroicons-outline"
-          name="check"
-        />
-        <span>You have a hunch about the solution that's needed, and don't want to waste time building the wrong thing</span></li>
+            class="h-12 w-12 mr-3 flex-none"
+            aria-hidden="true"
+            pack="heroicons-outline"
+            name="check"
+          />
+          <span
+            >You have a hunch about the solution that's needed, and don't want
+            to waste time building the wrong thing</span>
+        </li>
         <li class="pl-0 inline-flex items-center">
           <Icon
-          class="h-12 w-12 mr-3 flex-none"
-          aria-hidden="true"
-          pack="heroicons-outline"
-          name="check"
-        />
-        <span>You need to know where you should build on your own, and where you should partner with others</span></li>
+            class="h-12 w-12 mr-3 flex-none"
+            aria-hidden="true"
+            pack="heroicons-outline"
+            name="check"
+          />
+          <span
+            >You need to know where you should build on your own, and where you
+            should partner with others</span>
+        </li>
         <li class="pl-0 inline-flex items-center">
           <Icon
-          class="h-12 w-12 mr-3 flex-none"
-          aria-hidden="true"
-          pack="heroicons-outline"
-          name="check"
-        />
-        <span>You want a sounding board you can trust to think through all the details</span></li>
+            class="h-12 w-12 mr-3 flex-none"
+            aria-hidden="true"
+            pack="heroicons-outline"
+            name="check"
+          />
+          <span
+            >You want a sounding board you can trust to think through all the
+            details</span>
+        </li>
       </ul>
     </div>
   </div>

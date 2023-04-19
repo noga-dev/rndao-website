@@ -2,6 +2,7 @@
 import SVGImg from '../components/svgimg.astro'
 import { FeaturedSVG } from '../config'
 ---
+
 <script>
   import Alpine from 'alpinejs'
   import intersect from '@alpinejs/intersect'
@@ -11,36 +12,43 @@ import { FeaturedSVG } from '../config'
     // Alpine.start()
   }
 </script>
-<div class="hero-wrapper relative h-screen lg:max-h-[80vh] -mt-16 pt-16 xs:pt-0  bg-white dark:bg-zinc-900 overflow-hidden">
-  <div class="hidden lg:block lg:absolute  inset-y-0 -left-20 h-screen w-1/2 lg:-translate-x-8 z-[2]">
-    <svg
-    class="hidden lg:block absolute -right-1/4 inset-y-0 -top-1 h-screen w-48 text-white dark:text-zinc-900 transform z-[1]"
-    fill="currentColor"
-    viewBox="0 0 100 100"
-    preserveAspectRatio="none"
-    aria-hidden="true"
+<div
+  class="hero-wrapper relative h-screen lg:max-h-[80vh] -mt-16 pt-16 xs:pt-0 bg-white dark:bg-zinc-900 overflow-hidden"
+>
+  <div
+    class="hidden lg:block lg:absolute inset-y-0 -left-20 h-screen w-1/2 lg:-translate-x-8 z-[2]"
   >
-    <polygon points="25,0 100,0 75,100 0,100"></polygon>
+    <svg
+      class="hidden lg:block absolute -right-1/4 inset-y-0 -top-1 h-screen w-48 text-white dark:text-zinc-900 transform z-[1]"
+      fill="currentColor"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <polygon points="25,0 100,0 75,100 0,100"></polygon>
     </svg>
     <svg
-    class="hidden lg:block absolute -right-1/4 inset-y-0 h-screen w-48 text-black dark:text-black transform z-0 opacity-50 blur-xl"
-    fill="currentColor"
-    viewBox="0 0 100 100"
-    preserveAspectRatio="none"
-    aria-hidden="true"
-  >
-    <polygon points="25,0 100,0 75,100 0,100"></polygon>
+      class="hidden lg:block absolute -right-1/4 inset-y-0 h-screen w-48 text-black dark:text-black transform z-0 opacity-50 blur-xl"
+      fill="currentColor"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <polygon points="25,0 100,0 75,100 0,100"></polygon>
     </svg>
-    <div class="absolute inset-y-0 w-full sm:w-[115%] h-screen bg-white dark:bg-zinc-900 z-[2]" />
+    <div
+      class="absolute inset-y-0 w-full sm:w-[115%] h-screen bg-white dark:bg-zinc-900 z-[2]"
+    >
+    </div>
   </div>
   <div class="w-full lg:max-w-6xl 2xl:max-w-7xl mx-auto h-full">
     <div
       class="z-20 relative h-full lg:max-w-2xl lg:w-full items-start justify-center flex flex-col"
     >
       <main
-        class="relative flex items-center 2xl:mx-auto w-full max-w-xl 2xl:max-w-7xl px-4 sm:px-0 sm:pr-12  z-20 h-full"
+        class="relative flex items-center 2xl:mx-auto w-full max-w-xl 2xl:max-w-7xl px-4 sm:px-0 sm:pr-12 z-20 h-full"
         x-data="{shown: false}"
-        x-intersect.half="shown = true"
+        x-intersect:half="shown = true"
         x-intersect:leave="shown = false"
       >
         <div
@@ -55,24 +63,27 @@ import { FeaturedSVG } from '../config'
           x-transition:leave-end="opacity-50 -translate-x-6"
         >
           <h1
-            class="text-4xl xs:text-7xl xl:text-4xl 2xl:text-6xl tracking-tight font-heading font-bold text-zinc-900 dark:text-zinc-50  text-left"
+            class="text-4xl xs:text-7xl xl:text-4xl 2xl:text-6xl tracking-tight font-heading font-bold text-zinc-900 dark:text-zinc-50 text-left"
           >
-            <span class="block xl:inline">Get a razor sharp understanding of the market{' '}
-            and your users.
+            <span class="block xl:inline"
+              >Get a razor sharp understanding of the market{' '}
+              and your users.
             </span>
           </h1>
           <p
-            class="mt-5 text-sm xs:text-lg xl:text-base 2xl:text-xl text-gray-600 dark:text-zinc-300 text-left  sm:max-w-xl sm:mx-auto md:mt-5  lg:mx-0"
+            class="mt-5 text-sm xs:text-lg xl:text-base 2xl:text-xl text-gray-600 dark:text-zinc-300 text-left sm:max-w-xl sm:mx-auto md:mt-5 lg:mx-0"
           >
-          Research-informed strategy helps you find product-market fit faster. Build with the confidence that you’re solving the right problem at the right time for the right user.
+            Research-informed strategy helps you find product-market fit faster.
+            Build with the confidence that you’re solving the right problem at
+            the right time for the right user.
           </p>
 
           <div class="mt-8 sm:flex sm:justify-center lg:justify-start">
             <div>
               <a
-              role="button"
+                role="button"
                 href="/contact"
-                class="btn glass w-full px-8 border border-transparent font-bold rounded-md text-white hover:!text-white bg-zinc-600 hover:bg-zinc-700 dark:text-black dark:bg-zinc-400 dark:hover:bg-zinc-600  dark:hover:text-black  md:px-10"
+                class="btn glass w-full px-8 border border-transparent font-bold rounded-md text-white hover:!text-white bg-zinc-600 hover:bg-zinc-700 dark:text-black dark:bg-zinc-400 dark:hover:bg-zinc-600 dark:hover:text-black md:px-10"
               >
                 Connect
               </a>
