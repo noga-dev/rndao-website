@@ -164,26 +164,28 @@ const frontmatter: Frontmatter = {
             }
             {
               teamPages &&
-                teamPages.map((member: any, i: any) => {
+                teamPages.map((member: any, i: number) => {
+                  // console.log(
+                  //   '\x1b[33m' + JSON.stringify(member, null, 4) + '\x1b[0m'
+                  // )
+
                   if (member) {
                     const { Name, LinkedIn, Website, Tagline, Twitter } =
                       member.properties
-                    const image = teamMembersBlocks.map(
-                      (memberBlocks: any, i: any) => {
-                        if (memberBlocks) {
-                          const imageBlock = memberBlocks.find(
-                            (block: BlockObjectResponse) => {
-                              if (block.type === 'image') {
-                                return block
-                              }
+                    const image = teamMembersBlocks.map((memberBlocks: any) => {
+                      if (memberBlocks) {
+                        const imageBlock = memberBlocks.find(
+                          (block: BlockObjectResponse) => {
+                            if (block.type === 'image') {
+                              return block
                             }
-                          )
-                          if (imageBlock) {
-                            return imageBlock.image.file.url
                           }
+                        )
+                        if (imageBlock) {
+                          return imageBlock.image.file.url
                         }
                       }
-                    )
+                    })
 
                     return (
                       <li class="team-member group relative m-0 w-full overflow-hidden rounded-md border-2 border-zinc-400 p-0 pb-[calc(100%_-_4px)] transition-all duration-200">
@@ -227,9 +229,9 @@ const frontmatter: Frontmatter = {
                                   />
                                 </a>
                               )}
-                              {Twitter.rich_text[0] && (
+                              {Twitter.url && (
                                 <a
-                                  href={`https://twitter.com/${Twitter.rich_text[0].plain_text}`}
+                                  href={`https://twitter.com/${Twitter.url}`}
                                   target="_blank"
                                   rel="noopener nofollow"
                                   title={`${Name.title[0].plain_text} on Twitter`}
